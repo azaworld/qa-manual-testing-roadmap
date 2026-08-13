@@ -1,0 +1,66 @@
+<svg viewBox="0 0 1200 400" width="1200" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Defect lifecycle: New, Triaged, In Progress, Fixed, Retest, then Closed or Reopened">
+  <rect width="1200" height="400" rx="14" fill="#0d1130"/>
+  <text x="600" y="46" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f5f9">🐞 The Defect Lifecycle — follow the bug</text>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle" font-size="15" font-weight="600">
+    <!-- main path boxes at y=120; centers 130,320,510,700,890,1080 -->
+    <rect x="60" y="120" width="140" height="56" rx="10" fill="#1e293b" stroke="#f472b6" stroke-width="2"/>
+    <text x="130" y="154" fill="#f472b6">NEW</text>
+
+    <rect x="250" y="120" width="140" height="56" rx="10" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+    <text x="320" y="147" fill="#eab308">TRIAGED</text>
+    <text x="320" y="164" font-size="11" font-weight="400" fill="#93a0c2">severity × priority</text>
+
+    <rect x="440" y="120" width="140" height="56" rx="10" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <text x="510" y="147" fill="#60a5fa">IN PROGRESS</text>
+    <text x="510" y="164" font-size="11" font-weight="400" fill="#93a0c2">dev fixing</text>
+
+    <rect x="630" y="120" width="140" height="56" rx="10" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+    <text x="700" y="147" fill="#a78bfa">FIXED</text>
+    <text x="700" y="164" font-size="11" font-weight="400" fill="#93a0c2">awaiting build</text>
+
+    <rect x="820" y="120" width="140" height="56" rx="10" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
+    <text x="890" y="147" fill="#22d3ee">RETEST</text>
+    <text x="890" y="164" font-size="11" font-weight="400" fill="#93a0c2">QA verifies — you!</text>
+
+    <rect x="1010" y="120" width="140" height="56" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="1080" y="154" fill="#22c55e">CLOSED ✅</text>
+
+    <!-- reopened box -->
+    <rect x="820" y="270" width="140" height="56" rx="10" fill="#2b1523" stroke="#ef4444" stroke-width="2"/>
+    <text x="890" y="297" fill="#ef4444">REOPENED</text>
+    <text x="890" y="314" font-size="11" font-weight="400" fill="#93a0c2">fix failed → back to dev</text>
+
+    <!-- side exits -->
+    <rect x="250" y="270" width="140" height="56" rx="10" fill="#1a2032" stroke="#64748b" stroke-width="2"/>
+    <text x="320" y="297" fill="#94a3b8">REJECTED</text>
+    <text x="320" y="314" font-size="11" font-weight="400" fill="#93a0c2">not a bug / by design</text>
+
+    <rect x="440" y="270" width="140" height="56" rx="10" fill="#1a2032" stroke="#64748b" stroke-width="2"/>
+    <text x="510" y="297" fill="#94a3b8">DEFERRED</text>
+    <text x="510" y="314" font-size="11" font-weight="400" fill="#93a0c2">valid — fix later + ticket</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#3b4368" stroke-width="2" fill="none">
+    <path d="M 200 148 L 246 148"/><path d="M 390 148 L 436 148"/><path d="M 580 148 L 626 148"/><path d="M 770 148 L 816 148"/><path d="M 960 148 L 1006 148"/>
+    <path d="M 320 176 L 320 266" stroke-dasharray="5 5"/>
+    <path d="M 440 176 C 400 220, 480 230, 496 266" stroke-dasharray="5 5"/>
+    <path d="M 890 176 L 890 266" stroke="#ef4444" stroke-dasharray="5 5"/>
+    <path d="M 820 298 C 640 298, 540 220, 512 180" stroke="#ef4444" stroke-dasharray="5 5"/>
+  </g>
+  <g fill="#3b4368" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14">
+    <text x="243" y="143">▶</text><text x="433" y="143">▶</text><text x="623" y="143">▶</text><text x="813" y="143">▶</text><text x="1003" y="143">▶</text>
+  </g>
+  <text x="925" y="225" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#ef4444">still broken</text>
+
+  <!-- animated bug traveling the happy path, then the reopen loop -->
+  <text font-size="20" opacity="0">🐞
+    <animateMotion dur="10s" repeatCount="indefinite"
+      path="M 130 105 L 320 105 L 510 105 L 700 105 L 890 105 L 890 240 L 640 250 L 520 190 L 520 105 L 700 105 L 890 105 L 1080 105"
+      keyPoints="0;0.1;0.2;0.3;0.4;0.5;0.58;0.65;0.7;0.8;0.9;1" keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.58;0.65;0.7;0.8;0.9;1" calcMode="linear"/>
+    <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;0.03;0.5;0.97;1" dur="10s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="600" y="378" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#7d89ad">watch the bug: caught → triaged → fixed → fails retest → REOPENED → fixed again → CLOSED. Deferred needs an owner — or it's a lie.</text>
+</svg>

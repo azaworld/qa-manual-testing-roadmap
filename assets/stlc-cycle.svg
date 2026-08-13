@@ -1,0 +1,73 @@
+<svg viewBox="0 0 1200 260" width="1200" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="STLC: requirement analysis, planning, case design, environment setup, execution, closure — repeating each cycle">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d1130"/><stop offset="100%" stop-color="#0a1c2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="260" rx="14" fill="url(#bg2)"/>
+  <text x="600" y="42" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f5f9">STLC — the Software Testing Life Cycle</text>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <!-- six phase boxes; each pulses in sequence (12s loop, 2s per phase) -->
+    <!-- box template: x centers at 130,320,510,700,890,1080; box w=160 h=84 y=88 -->
+    <g>
+      <rect x="50" y="88" width="160" height="84" rx="12" fill="#131a3f" stroke="#22d3ee" stroke-width="2">
+        <animate attributeName="fill" values="#131a3f;#164e63;#131a3f" keyTimes="0;0.08;0.17" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <text x="130" y="122" font-size="24">📋</text>
+      <text x="130" y="150" font-size="14.5" font-weight="600" fill="#dbe3f4">1. Requirement</text>
+      <text x="130" y="166" font-size="12.5" fill="#93a0c2">analysis &amp; questions</text>
+    </g>
+    <g>
+      <rect x="240" y="88" width="160" height="84" rx="12" fill="#131a3f" stroke="#22d3ee" stroke-width="2">
+        <animate attributeName="fill" values="#131a3f;#131a3f;#164e63;#131a3f" keyTimes="0;0.17;0.25;0.34" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <text x="320" y="122" font-size="24">🗺️</text>
+      <text x="320" y="150" font-size="14.5" font-weight="600" fill="#dbe3f4">2. Test planning</text>
+      <text x="320" y="166" font-size="12.5" fill="#93a0c2">scope · risks · approach</text>
+    </g>
+    <g>
+      <rect x="430" y="88" width="160" height="84" rx="12" fill="#131a3f" stroke="#22d3ee" stroke-width="2">
+        <animate attributeName="fill" values="#131a3f;#131a3f;#164e63;#131a3f" keyTimes="0;0.34;0.42;0.5" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <text x="510" y="122" font-size="24">✍️</text>
+      <text x="510" y="150" font-size="14.5" font-weight="600" fill="#dbe3f4">3. Case design</text>
+      <text x="510" y="166" font-size="12.5" fill="#93a0c2">EP · BVA · tables · data</text>
+    </g>
+    <g>
+      <rect x="620" y="88" width="160" height="84" rx="12" fill="#131a3f" stroke="#22d3ee" stroke-width="2">
+        <animate attributeName="fill" values="#131a3f;#131a3f;#164e63;#131a3f" keyTimes="0;0.5;0.58;0.67" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <text x="700" y="122" font-size="24">🖥️</text>
+      <text x="700" y="150" font-size="14.5" font-weight="600" fill="#dbe3f4">4. Environment</text>
+      <text x="700" y="166" font-size="12.5" fill="#93a0c2">staging · accounts · data</text>
+    </g>
+    <g>
+      <rect x="810" y="88" width="160" height="84" rx="12" fill="#131a3f" stroke="#22d3ee" stroke-width="2">
+        <animate attributeName="fill" values="#131a3f;#131a3f;#164e63;#131a3f" keyTimes="0;0.67;0.75;0.84" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <text x="890" y="122" font-size="24">▶️</text>
+      <text x="890" y="150" font-size="14.5" font-weight="600" fill="#dbe3f4">5. Execution</text>
+      <text x="890" y="166" font-size="12.5" fill="#93a0c2">run · log bugs · retest</text>
+    </g>
+    <g>
+      <rect x="1000" y="88" width="160" height="84" rx="12" fill="#131a3f" stroke="#22d3ee" stroke-width="2">
+        <animate attributeName="fill" values="#131a3f;#131a3f;#164e63;#131a3f" keyTimes="0;0.84;0.92;1" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <text x="1080" y="122" font-size="24">🏁</text>
+      <text x="1080" y="150" font-size="14.5" font-weight="600" fill="#dbe3f4">6. Closure</text>
+      <text x="1080" y="166" font-size="12.5" fill="#93a0c2">summary · go/no-go</text>
+    </g>
+
+    <!-- arrows -->
+    <g fill="#3b4368" font-size="20">
+      <text x="225" y="136">→</text><text x="415" y="136">→</text><text x="605" y="136">→</text><text x="795" y="136">→</text><text x="985" y="136">→</text>
+    </g>
+  </g>
+
+  <!-- loop back -->
+  <path d="M 1080 180 C 1080 232, 130 232, 130 180" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-120" dur="6s" repeatCount="indefinite"/>
+  </path>
+  <text x="600" y="242" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a78bfa">repeats every sprint / release — phases overlap in agile, the thinking order stays</text>
+</svg>

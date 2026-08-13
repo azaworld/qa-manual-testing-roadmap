@@ -4,6 +4,8 @@
 
 ## The ladder
 
+<img src="assets/career-ladder.svg" alt="Animated QA career ladder: Trainee → Junior → Mid → Senior → Lead, with the jumps labeled skill, judgment, influence, people & systems" width="100%" />
+
 | Level | Years (typical) | What you own | What gets you promoted |
 |---|---|---|---|
 | **Trainee / Intern** | 0–1 | Executing test cases someone else wrote | Reliability: every result recorded, every bug reproducible |

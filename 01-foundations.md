@@ -38,6 +38,8 @@ Requirements → Design → Development → Testing → Deployment → Maintenan
 
 ## 4. STLC — the testing life cycle
 
+<img src="assets/stlc-cycle.svg" alt="Animated STLC cycle: requirement analysis → planning → case design → environment → execution → closure, repeating" width="100%" />
+
 **Software Testing Life Cycle** — what *you* do, phase by phase:
 
 | Phase | Activity | Output |

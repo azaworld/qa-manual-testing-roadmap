@@ -46,6 +46,8 @@ Don't become the person who automates *instead of* testing. The market is full o
 
 ---
 
-**You've reached the end of the roadmap — but the journey compounds daily.** Star the repo, do the exercises, build the portfolio, and when you land the job or the promotion: [tell me](https://github.com/azaworld/qa-manual-testing-roadmap/issues). I mean it.
+**The technical roadmap ends here — but two chapters remain, and they matter as much as everything above:** [Soft Skills](10-soft-skills.md) (what actually decides careers) and the [Sources & Further Learning library](11-resources.md).
+
+Star the repo, do the exercises, build the portfolio, and when you land the job or the promotion: [tell me](https://github.com/azaworld/qa-manual-testing-roadmap/issues). I mean it.
 
 ← Back to [the roadmap](README.md)

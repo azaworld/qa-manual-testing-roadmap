@@ -1,0 +1,11 @@
+title: QA Manual Testing — Complete Career Roadmap
+description: From zero to QA Lead — concepts, techniques, templates, worked examples, soft skills & sources. By Arifuzzaman Antor (azantor.xyz)
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - README.md
+  - "*.md"

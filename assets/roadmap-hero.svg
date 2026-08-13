@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1200 320" width="1200" height="320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QA Manual Testing — the complete career roadmap: basic to intermediate to advanced">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#150e2e"/><stop offset="50%" stop-color="#0b1026"/><stop offset="100%" stop-color="#072031"/>
+    </linearGradient>
+    <linearGradient id="path" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/><stop offset="50%" stop-color="#eab308"/><stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="320" fill="url(#bg)"/>
+
+  <text x="600" y="78" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="800" fill="#f1f5f9">🧪 QA Manual Testing <tspan fill="#22d3ee">Career Roadmap</tspan></text>
+  <text x="600" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" fill="#93a0c2">Zero → QA Lead · concepts → techniques → career, with real examples at every step</text>
+
+  <!-- journey path (visible; dash flow loops) -->
+  <path d="M 120 225 C 350 165, 500 285, 700 215 S 1000 165, 1080 205" fill="none" stroke="url(#path)" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 10">
+    <animate attributeName="stroke-dashoffset" from="0" to="-240" dur="6s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- traveler loops along the journey -->
+  <circle r="9" fill="#f1f5f9">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M 120 225 C 350 165, 500 285, 700 215 S 1000 165, 1080 205"/>
+    <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.94;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- milestones (always visible; gentle pulse) -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <circle cx="120" cy="225" r="13" fill="#22c55e">
+      <animate attributeName="r" values="13;15;13" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="120" y="265" font-size="16" font-weight="700" fill="#22c55e">BASIC</text>
+    <text x="120" y="285" font-size="13" fill="#7d89ad">foundations · techniques · artifacts</text>
+
+    <circle cx="620" cy="235" r="13" fill="#eab308">
+      <animate attributeName="r" values="13;15;13" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="620" y="275" font-size="16" font-weight="700" fill="#eab308">INTERMEDIATE</text>
+    <text x="620" y="295" font-size="13" fill="#7d89ad">testing types · agile · tools · soft skills</text>
+
+    <circle cx="1080" cy="205" r="13" fill="#f472b6">
+      <animate attributeName="r" values="13;15;13" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="1080" y="245" font-size="16" font-weight="700" fill="#f472b6">ADVANCED</text>
+    <text x="1080" y="265" font-size="13" fill="#7d89ad">career · interviews · automation</text>
+  </g>
+
+  <text x="1080" y="185" text-anchor="middle" font-size="22">🚩</text>
+</svg>

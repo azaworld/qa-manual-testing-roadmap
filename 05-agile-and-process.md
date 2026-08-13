@@ -26,12 +26,7 @@ Fight for this in writing. "Done in dev" ≠ done.
 
 ## 3. The defect lifecycle
 
-```
-New → Triaged → In Progress → Fixed → Ready for Retest → Retested ─→ Closed
-         │                                       │
-         ├→ Rejected (not a bug / by design)     └→ Reopened (fix failed) → In Progress
-         └→ Deferred (valid, fix later — needs a ticket + owner, or it's a lie)
-```
+<img src="assets/bug-lifecycle.svg" alt="Animated defect lifecycle: a bug travels New → Triaged → In Progress → Fixed → Retest, gets Reopened once, then Closed" width="100%" />
 
 **Triage** is where severity meets business priority. Come prepared: reproduction rate, affected user %, workaround exists or not. You're the evidence, product is the judge.
 
