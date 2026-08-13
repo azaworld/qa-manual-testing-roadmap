@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.url != "/" %}{{ page.title | capitalize }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f6f8fa; --text:#1f2328; --text-soft:#57606a; --border:#d8dee4;
+  --accent:#0e7c86; --accent-strong:#0a5d65; --accent-soft:#e6f7f9;
+  --side-bg:#0d1130; --side-text:#c7cfe8; --side-muted:#7d89ad; --side-active:#22d3ee;
+  --code-bg:#f2f4f7; --note-bg:#f0fbfc; --shadow:0 1px 3px rgba(16,24,40,.08);
+}
+[data-theme="dark"]{
+  --bg:#0b0f1e; --bg-soft:#111631; --text:#e6eaf6; --text-soft:#9aa5c4; --border:#28304f;
+  --accent:#22d3ee; --accent-strong:#67e8f9; --accent-soft:#12304a;
+  --side-bg:#080b18; --code-bg:#161c38; --note-bg:#0e2233; --shadow:0 1px 3px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16.5px}
+/* progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#22d3ee,#a78bfa);z-index:60}
+/* topbar */
+.topbar{position:fixed;top:0;left:0;right:0;height:58px;background:linear-gradient(90deg,#150e2e,#0b1026 55%,#072031);display:flex;align-items:center;gap:14px;padding:0 18px;z-index:50;box-shadow:0 1px 6px rgba(0,0,0,.35)}
+.topbar a{color:#e6eaf6;text-decoration:none}
+.brand{font-weight:800;font-size:1.06rem;white-space:nowrap}
+.brand span{color:#22d3ee}
+.tagline{color:#7d89ad;font-size:.82rem;white-space:nowrap}
+.topnav{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:.88rem}
+.topnav a:hover{color:#22d3ee}
+#theme-btn{background:none;border:1px solid #3b4368;color:#c7cfe8;border-radius:8px;padding:4px 10px;cursor:pointer;font-size:.9rem}
+#menu-btn{display:none;background:none;border:1px solid #3b4368;color:#c7cfe8;border-radius:8px;padding:4px 10px;cursor:pointer;font-size:1rem}
+/* layout */
+.wrap{display:flex;padding-top:58px;min-height:100vh}
+.sidebar{position:fixed;top:58px;bottom:0;left:0;width:292px;background:var(--side-bg);overflow-y:auto;padding:14px 0 30px;z-index:40}
+.sidebar .search{margin:4px 16px 12px}
+.sidebar .search input{width:100%;padding:8px 12px;border-radius:8px;border:1px solid #28304f;background:#111631;color:#e6eaf6;font-size:.88rem;outline:none}
+.sidebar .search input:focus{border-color:#22d3ee}
+.group{padding:14px 18px 6px;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--side-muted)}
+.navlink{display:block;padding:7px 18px 7px 26px;color:var(--side-text);text-decoration:none;font-size:.9rem;border-left:3px solid transparent}
+.navlink:hover{background:rgba(34,211,238,.08);color:#fff}
+.navlink.active{color:var(--side-active);border-left-color:var(--side-active);background:rgba(34,211,238,.1);font-weight:600}
+.content{margin-left:292px;flex:1;min-width:0;display:flex;justify-content:center}
+.article{width:100%;max-width:920px;padding:34px 44px 70px}
+/* breadcrumb */
+.crumb{font-size:.83rem;color:var(--text-soft);margin-bottom:18px}
+.crumb a{color:var(--accent);text-decoration:none}
+/* typography */
+.article h1{font-size:2.05rem;line-height:1.25;margin:.2em 0 .6em}
+.article h2{font-size:1.45rem;margin-top:2.2em;padding-bottom:.35em;border-bottom:2px solid var(--border)}
+.article h3{font-size:1.15rem;margin-top:1.8em}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+.article a:hover{border-bottom-color:var(--accent)}
+.article img{max-width:100%;border-radius:12px;margin:10px 0}
+.article blockquote{margin:1.2em 0;padding:14px 18px;background:var(--note-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;color:var(--text)}
+.article blockquote p{margin:0}
+.article code{background:var(--code-bg);padding:.15em .45em;border-radius:6px;font-size:.86em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.article pre{background:var(--code-bg);border:1px solid var(--border);padding:16px;border-radius:12px;overflow-x:auto;line-height:1.5}
+.article pre code{background:none;padding:0}
+.article table{display:block;overflow-x:auto;border-collapse:collapse;margin:1.3em 0;width:100%}
+.article th,.article td{border:1px solid var(--border);padding:9px 13px;text-align:left;vertical-align:top;font-size:.94rem}
+.article th{background:var(--bg-soft);font-weight:700}
+.article tr:nth-child(even) td{background:var(--bg-soft)}
+.article hr{border:none;border-top:1px solid var(--border);margin:2.4em 0}
+.article li{margin:.3em 0}
+/* prev/next */
+.pager{display:flex;gap:14px;margin-top:54px}
+.pager a{flex:1;border:1.5px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--text);box-shadow:var(--shadow)}
+.pager a:hover{border-color:var(--accent)}
+.pager .dir{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-soft);margin-bottom:4px}
+.pager .t{color:var(--accent);font-weight:600}
+.pager .next{text-align:right}
+/* footer */
+.foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-soft);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+.foot a{color:var(--accent);text-decoration:none}
+/* mobile */
+@media (max-width:1020px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  body.nav-open .sidebar{transform:none;box-shadow:4px 0 24px rgba(0,0,0,.4)}
+  .content{margin-left:0}
+  .article{padding:26px 20px 60px}
+  #menu-btn{display:block}
+  .tagline{display:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header class="topbar">
+  <button id="menu-btn" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="{{ '/' | relative_url }}">🧪 QA Manual Testing <span>Roadmap</span></a>
+  <span class="tagline">an open curriculum by Arifuzzaman Antor</span>
+  <nav class="topnav">
+    <a href="https://azantor.xyz" target="_blank" rel="noopener">azantor.xyz</a>
+    <a href="https://github.com/azaworld/qa-manual-testing-roadmap" target="_blank" rel="noopener">⭐ GitHub</a>
+    <button id="theme-btn" aria-label="Toggle theme">🌙</button>
+  </nav>
+</header>
+
+<div class="wrap">
+  <aside class="sidebar" id="sidebar">
+    <div class="search"><input id="nav-search" type="search" placeholder="Search lessons…" aria-label="Search lessons"></div>
+    {% for group in site.data.nav %}
+    <div class="group">{{ group.title }}</div>
+    {% for item in group.items %}
+    <a class="navlink{% if page.url == item.url %} active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
+    {% endfor %}
+  </aside>
+
+  <main class="content">
+    <article class="article">
+      {% assign all_items = "" | split: "" %}
+      {% for group in site.data.nav %}{% assign all_items = all_items | concat: group.items %}{% endfor %}
+      {% assign cur_idx = -999 %}
+      {% for item in all_items %}{% if item.url == page.url %}{% assign cur_idx = forloop.index0 %}{% endif %}{% endfor %}
+
+      {% if page.url != "/" %}
+      <nav class="crumb"><a href="{{ '/' | relative_url }}">Home</a> › {% for item in all_items %}{% if item.url == page.url %}{{ item.title }}{% endif %}{% endfor %}</nav>
+      {% endif %}
+
+      {{ content }}
+
+      {% if cur_idx >= 0 %}
+      {% assign prev_idx = cur_idx | minus: 1 %}
+      {% assign next_idx = cur_idx | plus: 1 %}
+      <nav class="pager">
+        {% if cur_idx > 0 %}{% assign p = all_items[prev_idx] %}
+        <a href="{{ p.url | relative_url }}"><span class="dir">← Previous</span><span class="t">{{ p.title }}</span></a>
+        {% endif %}
+        {% if next_idx < all_items.size %}{% assign n = all_items[next_idx] %}
+        <a class="next" href="{{ n.url | relative_url }}"><span class="dir">Next →</span><span class="t">{{ n.title }}</span></a>
+        {% endif %}
+      </nav>
+      {% endif %}
+
+      <footer class="foot">
+        <span>© 2026 <a href="https://azantor.xyz">Arifuzzaman Antor</a> · MIT License</span>
+        <span><a href="https://github.com/azaworld/qa-manual-testing-roadmap/issues">Feedback & questions</a> · <a href="https://www.upwork.com/freelancers/~01b1ba72ba57683f43">Hire me</a></span>
+      </footer>
+    </article>
+  </main>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme-btn');
+  var saved=localStorage.getItem('qa-theme');
+  var dark=saved?saved==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function apply(){root.setAttribute('data-theme',dark?'dark':'light');btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  btn.addEventListener('click',function(){dark=!dark;localStorage.setItem('qa-theme',dark?'dark':'light');apply();});
+
+  document.getElementById('menu-btn').addEventListener('click',function(){document.body.classList.toggle('nav-open');});
+
+  var bar=document.getElementById('progress');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+  },{passive:true});
+
+  var q=document.getElementById('nav-search');
+  q.addEventListener('input',function(){
+    var v=q.value.toLowerCase();
+    document.querySelectorAll('.navlink').forEach(function(a){a.style.display=a.textContent.toLowerCase().indexOf(v)>-1?'':'none';});
+    document.querySelectorAll('.group').forEach(function(g){
+      var el=g.nextElementSibling, any=false;
+      while(el&&el.classList.contains('navlink')){if(el.style.display!=='none')any=true;el=el.nextElementSibling;}
+      g.style.display=any?'':'none';
+    });
+  });
+})();
+</script>
+</body>
+</html>

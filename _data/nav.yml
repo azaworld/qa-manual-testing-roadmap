@@ -1,0 +1,51 @@
+- title: "🏠 Getting Started"
+  items:
+    - title: "The Roadmap — Start Here"
+      url: "/"
+
+- title: "🟢 Basic"
+  items:
+    - title: "Stage 0 · Foundations"
+      url: "/01-foundations.html"
+    - title: "Stage 1 · Test Design Techniques"
+      url: "/02-test-design-techniques.html"
+    - title: "Stage 2 · Test Artifacts"
+      url: "/03-test-artifacts.html"
+
+- title: "🟡 Intermediate"
+  items:
+    - title: "Stage 3 · Types of Testing"
+      url: "/04-types-of-testing.html"
+    - title: "Stage 4 · QA in Agile Teams"
+      url: "/05-agile-and-process.html"
+    - title: "Stage 5 · The QA Toolbox"
+      url: "/06-tools.html"
+    - title: "Stage 9 · Soft Skills"
+      url: "/10-soft-skills.html"
+
+- title: "🔴 Advanced"
+  items:
+    - title: "Stage 6 · Career Journey"
+      url: "/07-career-journey.html"
+    - title: "Stage 7 · Interview Preparation"
+      url: "/08-interview-prep.html"
+    - title: "Stage 8 · Path to Automation"
+      url: "/09-path-to-automation.html"
+    - title: "Stage 10 · Sources & Further Learning"
+      url: "/11-resources.html"
+
+- title: "📄 Templates"
+  items:
+    - title: "Test Plan Template"
+      url: "/templates/test-plan-template.html"
+    - title: "Test Case Template"
+      url: "/templates/test-case-template.html"
+    - title: "Bug Report Template"
+      url: "/templates/bug-report-template.html"
+
+- title: "🧪 Worked Examples"
+  items:
+    - title: "Checkout Test Cases"
+      url: "/examples/ecommerce-checkout-test-cases.html"
+    - title: "Sample Bug Report"
+      url: "/examples/sample-bug-report.html"

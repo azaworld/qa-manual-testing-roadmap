@@ -1,11 +1,19 @@
 title: QA Manual Testing — Complete Career Roadmap
-description: From zero to QA Lead — concepts, techniques, templates, worked examples, soft skills & sources. By Arifuzzaman Antor (azantor.xyz)
-theme: jekyll-theme-cayman
+description: From zero to QA Lead — concepts, techniques, templates, worked examples, soft skills & sources. An open curriculum by Arifuzzaman Antor (azantor.xyz)
+url: "https://azaworld.github.io"
+baseurl: "/qa-manual-testing-roadmap"
+
 plugins:
   - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+
 relative_links:
   enabled: true
   collections: true
-include:
-  - README.md
-  - "*.md"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
