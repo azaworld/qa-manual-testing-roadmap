@@ -123,14 +123,22 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .diagram-scroll{overflow-x:auto;overflow-y:hidden;margin:12px 0;border-radius:12px}
 .diagram-scroll img{margin:0;display:block}
 @media (max-width:760px){ .diagram-scroll{-webkit-overflow-scrolling:touch} .diagram-scroll img{min-width:560px} }
-/* Mermaid flowcharts — animated flowing edges + node entrance */
-.mermaid{margin:16px 0;overflow-x:auto;text-align:center}
-.mermaid:not([data-processed]){color:transparent;min-height:40px}
-.mermaid .edgePath .path,.mermaid .flowchart-link{stroke-dasharray:7 6;animation:dashflow 1.1s linear infinite}
+/* Mermaid flowcharts — clean, high-contrast, animated */
+.mermaid{margin:16px 0;overflow-x:auto;text-align:center;min-height:44px}
+.mermaid svg{max-width:100%;height:auto}
+/* while rendering: hide raw source + show a loading hint (but never permanently blank — see .mmfail) */
+.mermaid:not([data-processed]):not(.mmfail){color:transparent;position:relative}
+.mermaid:not([data-processed]):not(.mmfail)::after{content:"⏳ rendering diagram…";position:absolute;left:0;right:0;top:10px;color:var(--text-soft);font-size:.85rem}
+/* fallback if Mermaid can't load/parse: show the flow as readable text, not a blank box */
+.mermaid.mmfail{color:var(--text);white-space:pre-wrap;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;background:var(--code-bg);border:1px solid var(--border);border-radius:10px;padding:12px}
+.mermaid.mmfail::after{content:none}
+/* GfG-style polish + animation */
+.mermaid .node rect,.mermaid .node polygon,.mermaid .node circle{filter:drop-shadow(0 2px 5px rgba(0,0,0,.18))}
+.mermaid .edgePath .path,.mermaid .flowchart-link{stroke-dasharray:7 6;animation:dashflow 1.3s linear infinite}
 @keyframes dashflow{to{stroke-dashoffset:-13}}
-.mermaid .node{animation:mnodein .45s ease both}
-@keyframes mnodein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.mermaid .edgePath .path,.mermaid .flowchart-link{animation:none}.mermaid .node{animation:none}}
+.mermaid .node{animation:mnodein .5s ease both}
+@keyframes mnodein{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.mermaid .edgePath .path,.mermaid .flowchart-link,.mermaid .node{animation:none}}
 /* "Teach this" callout box */
 .teachbox{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:var(--note-bg);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:10px 14px;margin:10px 0 18px;font-size:.9rem}
 .teachbox b{color:var(--accent)}
@@ -377,33 +385,39 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 </script>
 
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-  function mtheme(){
-    var t=document.documentElement.getAttribute('data-theme');
-    var dark = t==='dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    return dark ? 'dark' : 'default';
-  }
-  // turn ```mermaid fenced blocks into rendered diagrams
-  document.querySelectorAll('pre > code.language-mermaid, code.language-mermaid').forEach(function(c){
-    var pre = c.closest('pre') || c;
+(async function(){
+  // turn ```mermaid fenced blocks into diagram containers (store source so we can fall back / re-theme)
+  var blocks=[].slice.call(document.querySelectorAll('pre > code.language-mermaid, code.language-mermaid'));
+  var divs=blocks.map(function(c){
+    var pre=c.closest('pre')||c;
     var d=document.createElement('div'); d.className='mermaid';
-    d.setAttribute('data-src', c.textContent);
-    d.textContent = c.textContent;
-    pre.replaceWith(d);
+    d.setAttribute('data-src', c.textContent); d.textContent=c.textContent;
+    pre.replaceWith(d); return d;
   });
-  function cfg(){ return {startOnLoad:false, theme:mtheme(), securityLevel:'loose', flowchart:{curve:'basis', useMaxWidth:true}, themeVariables:{fontFamily:'-apple-system,Segoe UI,Roboto,Arial'}}; }
-  if(document.querySelector('.mermaid')){
-    mermaid.initialize(cfg());
-    mermaid.run().catch(function(e){console.warn('mermaid',e);});
-    var tb=document.getElementById('theme-btn');
-    if(tb) tb.addEventListener('click', function(){
-      setTimeout(function(){
-        document.querySelectorAll('.mermaid').forEach(function(d){ d.innerHTML=d.getAttribute('data-src'); d.removeAttribute('data-processed'); });
-        mermaid.initialize(cfg());
-        mermaid.run().catch(function(){});
-      }, 80);
-    });
+  if(!divs.length) return;
+  function isDark(){ var t=document.documentElement.getAttribute('data-theme'); return t==='dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches); }
+  function cfg(){
+    var d=isDark();
+    var v = d
+      ? {primaryColor:'#16204a',primaryBorderColor:'#22d3ee',primaryTextColor:'#e9edfb',lineColor:'#93a7e0',secondaryColor:'#2a1e52',secondaryBorderColor:'#a78bfa',tertiaryColor:'#10233a',tertiaryBorderColor:'#3b4368',clusterBkg:'#10233a',edgeLabelBackground:'#0d1130'}
+      : {primaryColor:'#e9f7f9',primaryBorderColor:'#0e7c86',primaryTextColor:'#0f2b30',lineColor:'#0e7c86',secondaryColor:'#efe9ff',secondaryBorderColor:'#7c3aed',tertiaryColor:'#eef4ff',tertiaryBorderColor:'#c7d3e6',clusterBkg:'#eef4ff',edgeLabelBackground:'#ffffff'};
+    v.fontFamily='-apple-system,Segoe UI,Roboto,Arial'; v.fontSize='15px'; v.lineWidth='2px';
+    return {startOnLoad:false, theme:'base', securityLevel:'loose', flowchart:{curve:'basis',useMaxWidth:true,padding:14,nodeSpacing:48,rankSpacing:58}, themeVariables:v};
   }
+  function fallback(){ divs.forEach(function(d){ if(!d.hasAttribute('data-processed')) d.classList.add('mmfail'); }); }
+  var mermaid;
+  try { mermaid=(await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs')).default; }
+  catch(e){ console.warn('mermaid load failed', e); fallback(); return; }
+  try { mermaid.initialize(cfg()); await mermaid.run(); } catch(e){ console.warn('mermaid render', e); }
+  setTimeout(fallback, 8000); // any diagram that never rendered shows its source — never a blank box
+  var tb=document.getElementById('theme-btn');
+  if(tb) tb.addEventListener('click', function(){
+    setTimeout(function(){
+      divs.forEach(function(d){ d.classList.remove('mmfail'); d.innerHTML=d.getAttribute('data-src'); d.removeAttribute('data-processed'); });
+      try { mermaid.initialize(cfg()); mermaid.run(); } catch(e){}
+    }, 90);
+  });
+})();
 </script>
 </body>
 </html>
