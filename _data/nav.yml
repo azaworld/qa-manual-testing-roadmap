@@ -34,6 +34,15 @@
     - title: "Stage 10 · Sources & Further Learning"
       url: "/11-resources.html"
 
+- title: "🚀 Specialist Tracks"
+  items:
+    - title: "Stage 11 · AI × QA (MCP + Playwright)"
+      url: "/12-ai-for-qa.html"
+    - title: "Stage 12 · API Testing Deep Dive"
+      url: "/13-api-testing-deep-dive.html"
+    - title: "Stage 13 · Security Testing"
+      url: "/14-security-testing.html"
+
 - title: "📄 Templates"
   items:
     - title: "Test Plan Template"

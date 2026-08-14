@@ -46,7 +46,7 @@ Don't become the person who automates *instead of* testing. The market is full o
 
 ---
 
-**The technical roadmap ends here — but two chapters remain, and they matter as much as everything above:** [Soft Skills](10-soft-skills.md) (what actually decides careers) and the [Sources & Further Learning library](11-resources.md).
+**Keep going — the specialist tracks are where 2026 pay lives:** [AI × QA](12-ai-for-qa.md) (AI agents, MCP + Playwright, testing AI systems), [API Testing Deep Dive](13-api-testing-deep-dive.md), and [Security Testing](14-security-testing.md). Plus two chapters that matter as much as everything above: [Soft Skills](10-soft-skills.md) and the [Sources & Further Learning library](11-resources.md).
 
 Star the repo, do the exercises, build the portfolio, and when you land the job or the promotion: [tell me](https://github.com/azaworld/qa-manual-testing-roadmap/issues). I mean it.
 

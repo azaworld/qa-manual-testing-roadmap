@@ -47,6 +47,14 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 | **8** | [Path to Automation](09-path-to-automation.md) | Know when and how to add automation without abandoning your manual craft |
 | **10** | [Sources & Further Learning](11-resources.md) | The curated library: books, courses, practice sites, podcasts — with a per-stage reading map |
 
+### 🚀 Specialist Tracks — go deep where the market pays
+
+| Stage | Chapter | What you'll be able to do after it |
+|:---:|---|---|
+| **11** | [AI × QA (MCP + Playwright)](12-ai-for-qa.md) | Use AI on every QA task, drive browsers with AI agents via MCP, test AI systems (evals), and steer your career into AI QA |
+| **12** | [API Testing Deep Dive](13-api-testing-deep-dive.md) | Own API quality end-to-end: HTTP, negative design, auth, contract testing, GraphQL, automation-ready Postman/Newman |
+| **13** | [Security Testing](14-security-testing.md) | Find the OWASP Top 10 bugs functional testing misses — IDOR, XSS, injection — with ZAP/Burp, ethically |
+
 **Templates you can copy today:** [Test Plan](templates/test-plan-template.md) · [Test Case](templates/test-case-template.md) · [Bug Report](templates/bug-report-template.md)
 
 **Worked examples:** [E-commerce checkout test cases](examples/ecommerce-checkout-test-cases.md) · [Real bug report](examples/sample-bug-report.md)

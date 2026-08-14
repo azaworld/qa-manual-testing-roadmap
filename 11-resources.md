@@ -65,6 +65,63 @@
 - [Ministry of Testing newsletter](https://www.ministryoftesting.com/) — community happenings
 - LinkedIn: follow James Bach, Michael Bolton, Lisa Crispin, Janet Gregory, Angie Jones, Nicola Lindgren, and working testers who post real bugs
 
+## 🤖 AI for QA — tools, docs & learning (2026)
+
+The fastest-moving area in testing. Curated, current, mostly free.
+
+| Resource | What it's for |
+|---|---|
+| [Playwright MCP (official)](https://github.com/microsoft/playwright-mcp) | The server that lets AI agents drive a real browser — start here for agentic testing |
+| [Model Context Protocol docs](https://modelcontextprotocol.io/) | What MCP is and how to wire tools to AI clients |
+| [Playwright docs — Test agents](https://playwright.dev/docs/test-agents) | Official planner/generator/healer agent workflow |
+| [Claude Code](https://www.claude.com/product/claude-code) / [Cursor](https://cursor.com/) | MCP-capable clients that drive Playwright — where you'll actually run agents |
+| [promptfoo](https://promptfoo.dev/) | Free, QA-friendly LLM eval + red-teaming framework — best first eval tool |
+| [DeepEval](https://github.com/confident-ai/deepeval) | "PyTest for LLMs" — unit-test-style evals |
+| [OpenAI Evals](https://github.com/openai/evals) | Reference eval framework & registry |
+| [Langfuse](https://langfuse.com/) | Tracing + evals for LLM apps |
+| [OWASP Top 10 for LLM Apps](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | Security of AI systems — prompt injection & friends |
+| [Anthropic — building effective agents](https://www.anthropic.com/research/building-effective-agents) | How agentic systems are designed (so you know what to test) |
+| [Ministry of Testing — AI in Testing](https://www.ministryoftesting.com/) | Community discussion & talks on AI-assisted QA |
+
+## 🔌 API testing — deep resources
+
+| Resource | What it's for |
+|---|---|
+| [Postman Learning Center](https://learning.postman.com/) | The official, complete API-testing curriculum — free |
+| [freeCodeCamp Postman course](https://www.youtube.com/watch?v=VywxIQ2ZXw4) | 2–3h beginner-to-testing video, hands-on |
+| [restful-booker](https://restful-booker.herokuapp.com/apidoc/index.html) | Buggy CRUD+auth API built for practice |
+| [OpenAPI Specification](https://spec.openapis.org/) | The API contract standard — read the basics |
+| [Swagger tools](https://swagger.io/tools/) | Explore & try APIs from their spec |
+| [Spectral](https://github.com/stoplightio/spectral) | Lint OpenAPI specs (contract quality) |
+| [Pact — consumer-driven contracts](https://docs.pact.io/) | The contract-testing approach interviewers ask about |
+| [HTTP status codes (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) | The reference you'll reopen forever |
+| [GoRest](https://gorest.co.in/) / [ReqRes](https://reqres.in/) | Free auth-token & quick-request practice APIs |
+
+## 🔐 Security testing — learn it hands-on
+
+| Resource | What it's for |
+|---|---|
+| [PortSwigger Web Security Academy](https://portswigger.net/web-security) | THE free security-testing training — labs for every vuln, by the Burp team |
+| [OWASP Top 10](https://owasp.org/www-project-top-ten/) | The canonical risk list — required reading |
+| [OWASP WSTG](https://owasp.org/www-project-web-security-testing-guide/) | The professional Web Security Testing Guide/checklist |
+| [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) | Deliberately vulnerable app + challenge scoreboard |
+| [OWASP crAPI](https://github.com/OWASP/crAPI) | Vulnerable API for API-security practice |
+| [OWASP ZAP](https://www.zaproxy.org/) | Free open-source intercepting proxy + scanner |
+| [Burp Suite Community](https://portswigger.net/burp/communitydownload) | Free edition for manual security testing |
+| [TryHackMe](https://tryhackme.com/) / [HackTheBox](https://www.hackthebox.com/) | Gamified, legal hands-on security (free tiers) |
+
+## 💼 QA careers in the AI era
+
+| Resource | What it's for |
+|---|---|
+| [Test Automation University](https://testautomationu.applitools.com/) | Free structured path from manual → automation → AI-assisted |
+| [Ministry of Testing — jobs & community](https://www.ministryoftesting.com/) | Where QA careers get discussed and posted |
+| [OpenAI Evals cookbook](https://cookbook.openai.com/) | Practical eval recipes — the AI-QA skill in demand |
+| [roadmap.sh — QA](https://roadmap.sh/qa) | A visual skills roadmap to compare against this one |
+| Follow on LinkedIn | Angie Jones, Lisa Crispin, Janet Gregory, James Bach, Michael Bolton — and post your own learning |
+
+> 📈 **Market note (2026):** research shows companies find it *harder to hire people who can evaluate AI than build it* — and QA people are natural evaluators. AI-fluent QA roles (AI QA Engineer, AI Evals Engineer, LLM Auditor) carry a real pay premium. The gap is your opportunity — see [Stage 11](12-ai-for-qa.md).
+
 ## 🗺️ Per-stage reading map
 
 | After stage… | Go deeper with |
@@ -79,6 +136,9 @@
 | 7 Interviews | Glassdoor QA question banks · mock sessions with peers from The Club |
 | 8 Automation | Test Automation University (start: "Web Element Locator Strategies") · [Playwright docs](https://playwright.dev/) |
 | 9 Soft skills | *Perfect Software* · Crucial Conversations 💰 |
+| 11 AI × QA | [Playwright MCP](https://github.com/microsoft/playwright-mcp) · [promptfoo](https://promptfoo.dev/) · [OWASP Top 10 for LLMs](https://owasp.org/www-project-top-10-for-large-language-model-applications/) |
+| 12 API | [Postman Learning Center](https://learning.postman.com/) · restful-booker · OpenAPI basics |
+| 13 Security | [PortSwigger Academy](https://portswigger.net/web-security) · OWASP Juice Shop · OWASP Top 10 |
 
 ---
 

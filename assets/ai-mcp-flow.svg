@@ -1,0 +1,52 @@
+<svg viewBox="0 0 1200 320" width="1200" height="320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI agent testing loop: QA prompt → AI agent via MCP → real browser → observes DOM → generates test → QA reviews">
+  <rect width="1200" height="320" rx="14" fill="#0d1130"/>
+  <text x="600" y="42" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f5f9">🤖 AI Agent Testing Loop <tspan fill="#22d3ee">(MCP + Playwright)</tspan></text>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle" font-size="13.5" font-weight="600">
+    <!-- nodes across -->
+    <g>
+      <rect x="40" y="120" width="150" height="80" rx="12" fill="#132a4d" stroke="#22d3ee" stroke-width="2"/>
+      <text x="115" y="152" font-size="26">🧑‍💻</text><text x="115" y="180" fill="#dbe3f4">You — the QA</text><text x="115" y="196" font-size="11" font-weight="400" fill="#93a0c2">writes the charter</text>
+    </g>
+    <g>
+      <rect x="270" y="120" width="150" height="80" rx="12" fill="#2a1e52" stroke="#a78bfa" stroke-width="2"/>
+      <text x="345" y="152" font-size="26">🧠</text><text x="345" y="180" fill="#dbe3f4">AI Agent</text><text x="345" y="196" font-size="11" font-weight="400" fill="#93a0c2">Claude Code / Cursor</text>
+    </g>
+    <g>
+      <rect x="500" y="120" width="150" height="80" rx="12" fill="#0e3a2f" stroke="#22c55e" stroke-width="2"/>
+      <text x="575" y="152" font-size="26">🌐</text><text x="575" y="180" fill="#dbe3f4">Real Browser</text><text x="575" y="196" font-size="11" font-weight="400" fill="#93a0c2">via MCP server</text>
+    </g>
+    <g>
+      <rect x="730" y="120" width="150" height="80" rx="12" fill="#3a2f0e" stroke="#eab308" stroke-width="2"/>
+      <text x="805" y="152" font-size="26">📄</text><text x="805" y="180" fill="#dbe3f4">Reads DOM</text><text x="805" y="196" font-size="11" font-weight="400" fill="#93a0c2">a11y tree, not pixels</text>
+    </g>
+    <g>
+      <rect x="960" y="120" width="150" height="80" rx="12" fill="#3d1533" stroke="#f472b6" stroke-width="2"/>
+      <text x="1035" y="152" font-size="26">✅</text><text x="1035" y="180" fill="#dbe3f4">You review</text><text x="1035" y="196" font-size="11" font-weight="400" fill="#93a0c2">assert the asserts</text>
+    </g>
+
+    <!-- arrows -->
+    <g stroke="#3b4368" stroke-width="2" fill="none">
+      <path d="M 190 160 L 266 160"/><path d="M 420 160 L 496 160"/><path d="M 650 160 L 726 160"/><path d="M 880 160 L 956 160"/>
+    </g>
+    <g fill="#3b4368" font-size="14">
+      <text x="228" y="165">▶</text><text x="458" y="165">▶</text><text x="688" y="165">▶</text><text x="918" y="165">▶</text>
+    </g>
+
+    <!-- feedback loop: review -> agent (refine) -->
+    <path d="M 1035 200 C 1035 270, 345 270, 345 202" fill="none" stroke="#f472b6" stroke-width="2" stroke-dasharray="6 6">
+      <animate attributeName="stroke-dashoffset" from="0" to="-120" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <text x="690" y="262" font-size="12" font-weight="400" fill="#f9a8d4">refine &amp; re-run — the human stays in the loop</text>
+  </g>
+
+  <!-- data packet traveling the pipeline forever -->
+  <circle r="7" fill="#22d3ee">
+    <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear"
+      path="M 115 130 L 345 130 L 575 130 L 805 130 L 1035 130"
+      keyPoints="0;0.25;0.5;0.75;1" keyTimes="0;0.25;0.5;0.75;1"/>
+    <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;0.05;0.5;0.95;1" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="600" y="306" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7d89ad">AI does the volume · you own the verdict — the same judgment from Stage 2, applied at machine speed</text>
+</svg>
