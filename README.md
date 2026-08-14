@@ -8,6 +8,8 @@
 
 📊 **See everything at a glance:** the [QA Learning Dashboard](https://azaworld.github.io/qa-roadmap/dashboard.html) maps the whole curriculum, shows your progress ring & level, and links straight to every lesson and resource.
 
+🗺️ **Visualize & teach:** [Scenario Flowcharts](https://azaworld.github.io/qa-roadmap/26-flowcharts.html) — animated, interactive flowcharts for every core QA flow, each linked to a live demo site to teach from.
+
 <p>
   <a href="https://azantor.xyz"><img src="https://img.shields.io/badge/by-Arifuzzaman%20Antor-7c3aed?style=flat-square" /></a>
   <a href="https://www.upwork.com/freelancers/~01b1ba72ba57683f43"><img src="https://img.shields.io/badge/Upwork-Top%20Rated%20★5.0-14a800?style=flat-square&logo=upwork&logoColor=white" /></a>
