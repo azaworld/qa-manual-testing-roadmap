@@ -119,6 +119,10 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .ab-cta{color:#7cc4ff;font-weight:700;white-space:nowrap}
 .topnav .academy-link{color:#fbbf24}
 .topnav .academy-link:hover{color:#fcd34d}
+/* diagrams stay legible on phones: scroll instead of shrinking to nothing */
+.diagram-scroll{overflow-x:auto;overflow-y:hidden;margin:12px 0;border-radius:12px}
+.diagram-scroll img{margin:0;display:block}
+@media (max-width:760px){ .diagram-scroll{-webkit-overflow-scrolling:touch} .diagram-scroll img{min-width:560px} }
 /* tablet & below: sidebar becomes a drawer */
 @media (max-width:1020px){
   .sidebar{width:min(300px,82vw);transform:translateX(-100%);transition:transform .25s ease}
@@ -348,6 +352,15 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
   var reset=document.getElementById('reset-progress');
   if(reset)reset.addEventListener('click',function(){
     if(confirm('Reset all lesson progress in this browser?')){setDone([]);prevCount=render();syncBtn();toast('Progress reset.');}
+  });
+
+  // wrap wide diagram SVGs so they scroll (stay legible) on small screens
+  document.querySelectorAll('.article img').forEach(function(img){
+    var s=img.getAttribute('src')||'';
+    if(s.indexOf('assets/')>-1 && s.slice(-4)==='.svg' && !img.closest('.diagram-scroll')){
+      var w=document.createElement('div'); w.className='diagram-scroll';
+      img.parentNode.insertBefore(w,img); w.appendChild(img);
+    }
   });
 })();
 </script>
