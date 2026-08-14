@@ -74,16 +74,16 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 
 ## 👤 Why listen to me — what I've actually done
 
-I'm **Arifuzzaman "Antor"** ([azantor.xyz](https://azantor.xyz)) — Founder & CEO of [AZAI Labs](https://azailabs.dev), Technical Project Manager at Platformz, and a QA professional for 6+ years before that. This roadmap is the guide I wish I had on day one. The receipts:
+I'm **Arifuzzaman "Antor"** ([azantor.xyz](https://azantor.xyz)) — today Founder & CEO of [AZAI Labs](https://azailabs.dev), Co-Founder & CTO of Upward, Technical Project Manager at [Platformz](https://platformz.us), and Sr. SDET at Kintsugi. Before all that, I spent 6+ years as a QA engineer, climbing the exact ladder this roadmap describes: **Junior QA → QA Lead → SDET/TPM → founder.** This is the guide I wish I had on day one. The receipts:
 
-- 💳 **Mastercard** — Sr. Software Automation & Reliability Engineer: chaos engineering on payment-critical systems
-- 🏥 **Kinetik (NYC healthcare)** — QA Engineer I → **QA Lead**: owned quality for a healthcare logistics platform
-- 📱 **Grameenphone MyGP** — built the complete backend test framework for Bangladesh's largest telecom operator, from zero
-- 🛒 **FUR4 / Platformz** — run QA across 5 marketplace portals (Amazon, Walmart, Chewy, eBay, Macy's) plus a full EDI program
-- 🌍 **OpenCRVS** — civil registration system used by governments
-- ⭐ **Upwork Top Rated** — 23 jobs completed, every single one rated 5.0
+- 💳 **Mastercard** — Sr. Automation & Reliability Engineer: chaos engineering on payment-critical systems
+- 🏥 **Kinetik (NYC healthcare)** — QA Engineer I → **QA Lead**: owned quality for a NEMT platform (13M+ trips, $1.1B+ claims); shipped the iOS & Android apps
+- 🛒 **Platformz / FUR4** — led a **30+ person** team; delivered a 12-month 3P EDI program in **~60 days** across Amazon, Walmart, Target, Chewy, eBay & Macy's
+- 📱 **Grameenphone (MyGP)** — backend automation from zero for Bangladesh's largest mobile operator
+- 🏛️ **Government / civic tech** — OpenCRVS (UN-backed civil registration), IPEMIS, Sothik (AI Bangla spell-checker, QA lead)
+- ⭐ **Upwork Top Rated** — 23 jobs completed, every single one rated ★5.0
 
-Every template in this repo is a cleaned-up version of an artifact I've used on real projects.
+Every template in this repo is a cleaned-up version of an artifact I've used on real projects. **👉 [Read the full story & experience →](about.md)**
 
 ---
 

@@ -4,6 +4,8 @@
       url: "/"
     - title: "🎮 The Playground (practice)"
       url: "/17-playground.html"
+    - title: "👤 About the author"
+      url: "/about.html"
 
 - title: "🟢 Basic"
   items:
