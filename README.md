@@ -39,6 +39,7 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 | **4** | [QA in Agile Teams](05-agile-and-process.md) | Work a real sprint: defect lifecycle, severity vs priority, release gates, QA metrics, risk-based testing |
 | **5** | [The QA Toolbox](06-tools.md) | Jira, TestRail/QASE, Postman, browser DevTools, SQL, proxy tools — the daily drivers |
 | **9** | [Soft Skills](10-soft-skills.md) | Communicate, negotiate, and report like the tester everyone wants on their team |
+| **+** | [Tech Foundations](24-tech-foundations.md) | Exactly how much **coding, SQL, algorithms & AI** you need — scoped by role, so you learn what matters and skip what doesn't |
 
 ### 🔴 Advanced — growing beyond the role
 

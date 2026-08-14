@@ -56,6 +56,8 @@ You're assessed before you speak. Invest here first — details in [Career Journ
 
 **If you don't know something:** say so, then reason out loud. "I haven't used that tool, but based on how X works I'd expect… and I'd verify by…" Testers are hired for *how they think*, not for trivia recall.
 
+> 🧱 **Coding / SQL / DSA rounds?** SDET and big-tech roles often add them. Scope your prep with [Tech Foundations](24-tech-foundations.html) — it tells you exactly how much coding, SQL, and algorithms each role actually needs (and when a DSA round is worth grinding for).
+
 ---
 
 ## 5. Round 3 — The practical / hands-on task

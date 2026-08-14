@@ -30,6 +30,8 @@
       url: "/06-tools.html"
     - title: "Stage 9 · Soft Skills"
       url: "/10-soft-skills.html"
+    - title: "Tech Foundations · Code · DB · Algo"
+      url: "/24-tech-foundations.html"
 
 - title: "🔴 Advanced"
   items:
