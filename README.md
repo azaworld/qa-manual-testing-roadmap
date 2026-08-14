@@ -4,7 +4,7 @@
 
 **From zero to QA Lead — the complete QA curriculum, in the order you need to learn it, with real-world examples at every step.** Covers **Manual, Automation, AI × QA, API, Performance & Security** — choose your path and level up.
 
-🌐 **Play it as a gamified website:** [azaworld.github.io/qa-manual-testing-roadmap](https://azaworld.github.io/qa-manual-testing-roadmap/) — pick a track, mark lessons complete, earn XP, levels & badges (saved in your browser), and practice on real apps in [The Playground](17-playground.md).
+🌐 **Play it as a gamified website:** [azaworld.github.io/qa-roadmap](https://azaworld.github.io/qa-roadmap/) — pick a track, mark lessons complete, earn XP, levels & badges (saved in your browser), and practice on real apps in [The Playground](17-playground.md).
 
 <p>
   <a href="https://azantor.xyz"><img src="https://img.shields.io/badge/by-Arifuzzaman%20Antor-7c3aed?style=flat-square" /></a>
@@ -57,9 +57,15 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 | **14** | [Automation Deep Dive](15-automation-deep-dive.md) | Build real, maintainable UI + API automation: Playwright/Selenium, the pyramid, POM, locators & waits, data-driven, CI/CD, reporting |
 | **15** | [Performance Testing](16-performance-testing.md) | Load, stress, spike & soak testing with k6/JMeter — percentile metrics, methodology, bottleneck analysis, CI gates |
 
+### 🎯 The Capstone — put it all together
+
+> **[Get Hired as a Sr. QA — the Modern Ladder](18-capstone-sr-qa.md)** ties the whole roadmap into one climb: rung-by-rung **Learn → Build → Prove**, the modern **AI + Automation + MCP** workflow (with step-by-step MCP setup), a Sr. QA readiness checklist, and a 6-month plan. Start here if you want the end-to-end path to the job.
+
 **Templates you can copy today:** [Test Plan](templates/test-plan-template.md) · [Test Case](templates/test-case-template.md) · [Bug Report](templates/bug-report-template.md)
 
 **Worked examples:** [E-commerce checkout test cases](examples/ecommerce-checkout-test-cases.md) · [Real bug report](examples/sample-bug-report.md)
+
+**🎓 Guided courses:** prefer video + a certificate? Take these as courses on **[AZADEMY](https://azademy.vercel.app/)** — the roadmap is the free textbook, the academy is the classroom.
 
 ---
 

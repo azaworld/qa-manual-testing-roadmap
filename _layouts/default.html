@@ -111,6 +111,14 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .complete-note{font-size:.85rem;color:var(--text-soft)}
 .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(30px);background:#0d1130;color:#fff;border:1px solid #3b4368;border-left:4px solid #22d3ee;border-radius:12px;padding:12px 18px;font-size:.92rem;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.35s;z-index:70;max-width:90vw;text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* AZADEMY academy banner */
+.academy-banner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:linear-gradient(90deg,#1b2350,#2a1a4d);border:1px solid #3b4368;border-radius:14px;padding:13px 18px;margin:2px 0 22px;text-decoration:none;color:#e9edfb}
+.academy-banner:hover{border-color:#fbbf24;box-shadow:0 6px 20px rgba(251,191,36,.12)}
+.ab-badge{background:#fbbf24;color:#231800;font-weight:800;border-radius:999px;padding:4px 12px;font-size:.82rem;white-space:nowrap}
+.ab-text{flex:1;min-width:210px;font-size:.92rem;color:#cdd5ee}
+.ab-cta{color:#7cc4ff;font-weight:700;white-space:nowrap}
+.topnav .academy-link{color:#fbbf24}
+.topnav .academy-link:hover{color:#fcd34d}
 /* tablet & below: sidebar becomes a drawer */
 @media (max-width:1020px){
   .sidebar{width:min(300px,82vw);transform:translateX(-100%);transition:transform .25s ease}
@@ -153,8 +161,9 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
   <span class="tagline">Manual · Automation · AI — an open curriculum by Arifuzzaman Antor</span>
   <nav class="topnav">
     <a class="xp" id="xp" href="{{ '/' | relative_url }}#choose" title="Your progress — tap for tracks">⭐ <b class="xp-lvl">Lv 1</b><span class="xp-count">0/0</span></a>
+    <a class="academy-link" href="https://azademy.vercel.app/" target="_blank" rel="noopener">🎓 Academy</a>
     <a href="https://azantor.xyz" target="_blank" rel="noopener">azantor.xyz</a>
-    <a href="https://github.com/azaworld/qa-manual-testing-roadmap" target="_blank" rel="noopener">⭐ GitHub</a>
+    <a href="https://github.com/azaworld/qa-roadmap" target="_blank" rel="noopener">⭐ GitHub</a>
     <button id="theme-btn" aria-label="Toggle theme">🌙</button>
   </nav>
 </header>
@@ -182,7 +191,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
       <nav class="crumb"><a href="{{ '/' | relative_url }}">Home</a> › {% for item in all_items %}{% if item.url == page.url %}{{ item.title }}{% endif %}{% endfor %}</nav>
       {% endif %}
 
-      {% if page.url == "/" %}{% include chooser.html %}{% endif %}
+      {% if page.url == "/" %}{% include academy.html %}{% include chooser.html %}{% endif %}
 
       {{ content }}
 
@@ -208,7 +217,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 
       <footer class="foot">
         <span>© 2026 <a href="https://azantor.xyz">Arifuzzaman Antor</a> · MIT License</span>
-        <span><a href="https://github.com/azaworld/qa-manual-testing-roadmap/issues">Feedback & questions</a> · <a href="https://www.upwork.com/freelancers/~01b1ba72ba57683f43">Hire me</a></span>
+        <span><a href="https://azademy.vercel.app/">🎓 AZADEMY courses</a> · <a href="https://github.com/azaworld/qa-roadmap/issues">Feedback</a> · <a href="https://www.upwork.com/freelancers/~01b1ba72ba57683f43">Hire me</a></span>
       </footer>
     </article>
   </main>
@@ -250,7 +259,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 
   /* ---------------- gamification engine ---------------- */
   var KEY='qa-progress-v1';
-  var homePath=document.querySelector('.brand').pathname;              // e.g. /qa-manual-testing-roadmap/
+  var homePath=document.querySelector('.brand').pathname;              // e.g. /qa-roadmap/
   var navLinks=[].slice.call(document.querySelectorAll('.sidebar .navlink'));
   // completable lessons = every sidebar link except Home
   var LESSONS=navLinks.map(function(a){return a.pathname;}).filter(function(p){return p!==homePath;});

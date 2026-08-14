@@ -142,6 +142,6 @@ The fastest-moving area in testing. Curated, current, mostly free.
 
 ---
 
-**A promise about this list:** everything here is something I've read, used, or verified exists and delivers. No affiliate links, no filler. If a link dies, [open an issue](https://github.com/azaworld/qa-manual-testing-roadmap/issues).
+**A promise about this list:** everything here is something I've read, used, or verified exists and delivers. No affiliate links, no filler. If a link dies, [open an issue](https://github.com/azaworld/qa-roadmap/issues).
 
 ← Back to [the roadmap](README.md)

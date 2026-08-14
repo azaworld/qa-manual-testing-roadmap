@@ -1,5 +1,13 @@
 # Category cards for the "Choose your path" chooser on the home page.
 # Each track: icon, title, blurb, color, start URL, and the lessons that count toward its progress.
+- key: capstone
+  icon: "🎯"
+  title: "Get Hired as Sr. QA"
+  blurb: "The full climb: rung-by-rung Learn → Build → Prove, with AI + MCP — end to end."
+  color: "#f59e0b"
+  start: "/18-capstone-sr-qa.html"
+  lessons: ["/01-foundations.html","/02-test-design-techniques.html","/03-test-artifacts.html","/04-types-of-testing.html","/13-api-testing-deep-dive.html","/15-automation-deep-dive.html","/16-performance-testing.html","/14-security-testing.html","/12-ai-for-qa.html","/10-soft-skills.html","/08-interview-prep.html","/18-capstone-sr-qa.html"]
+
 - key: beginner
   icon: "🌱"
   title: "Start from Zero"

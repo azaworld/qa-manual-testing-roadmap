@@ -70,6 +70,6 @@
 
 Complete missions across at least **four** categories and you'll have a portfolio that beats any certificate: manual test cases, bug reports, a Postman collection, a security finding, a k6 report, and a green automation pipeline. That's not a "learner" — that's a **hire**.
 
-> 💬 Finished a mission? [Share it in an issue](https://github.com/azaworld/qa-manual-testing-roadmap/issues) — I feature great ones.
+> 💬 Finished a mission? [Share it in an issue](https://github.com/azaworld/qa-roadmap/issues) — I feature great ones.
 
 ← Back to [the roadmap](README.md)
