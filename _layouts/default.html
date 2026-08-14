@@ -20,7 +20,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16.5px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16.5px;overflow-x:hidden}
 /* progress bar */
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#22d3ee,#a78bfa);z-index:60}
 /* topbar */
@@ -54,7 +54,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .article h3{font-size:1.15rem;margin-top:1.8em}
 .article a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
 .article a:hover{border-bottom-color:var(--accent)}
-.article img{max-width:100%;border-radius:12px;margin:10px 0}
+.article img{max-width:100%;height:auto;border-radius:12px;margin:10px 0}
 .article blockquote{margin:1.2em 0;padding:14px 18px;background:var(--note-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;color:var(--text)}
 .article blockquote p{margin:0}
 .article code{background:var(--code-bg);padding:.15em .45em;border-radius:6px;font-size:.86em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
@@ -76,14 +76,33 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 /* footer */
 .foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-soft);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
 .foot a{color:var(--accent);text-decoration:none}
-/* mobile */
+/* drawer overlay */
+.nav-overlay{position:fixed;inset:58px 0 0 0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:39}
+/* tablet & below: sidebar becomes a drawer */
 @media (max-width:1020px){
-  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  .sidebar{width:min(300px,82vw);transform:translateX(-100%);transition:transform .25s ease}
   body.nav-open .sidebar{transform:none;box-shadow:4px 0 24px rgba(0,0,0,.4)}
+  body.nav-open .nav-overlay{opacity:1;pointer-events:auto}
+  body.nav-open{overflow:hidden}
   .content{margin-left:0}
-  .article{padding:26px 20px 60px}
+  .article{padding:26px 22px 60px}
   #menu-btn{display:block}
   .tagline{display:none}
+  .pager{flex-direction:column}
+}
+/* phones */
+@media (max-width:600px){
+  body{font-size:16px}
+  .topbar{gap:9px;padding:0 12px}
+  .brand{font-size:.92rem}
+  .topnav{gap:10px}
+  .topnav a{display:none}            /* azantor.xyz + GitHub live in the page footer too */
+  .article{padding:22px 16px 54px}
+  .article h1{font-size:1.62rem}
+  .article h2{font-size:1.24rem}
+  .article h3{font-size:1.08rem}
+  .article th,.article td{padding:8px 10px;font-size:.9rem}
+  .crumb{font-size:.78rem}
 }
 </style>
 </head>
@@ -110,6 +129,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
     {% endfor %}
     {% endfor %}
   </aside>
+  <div class="nav-overlay" id="nav-overlay"></div>
 
   <main class="content">
     <article class="article">
@@ -154,7 +174,13 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
   apply();
   btn.addEventListener('click',function(){dark=!dark;localStorage.setItem('qa-theme',dark?'dark':'light');apply();});
 
-  document.getElementById('menu-btn').addEventListener('click',function(){document.body.classList.toggle('nav-open');});
+  var body=document.body;
+  function closeNav(){body.classList.remove('nav-open');}
+  document.getElementById('menu-btn').addEventListener('click',function(){body.classList.toggle('nav-open');});
+  document.getElementById('nav-overlay').addEventListener('click',closeNav);
+  document.querySelectorAll('.sidebar .navlink').forEach(function(a){a.addEventListener('click',closeNav);});
+  window.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav();});
+  window.addEventListener('resize',function(){if(window.innerWidth>1020)closeNav();});
 
   var bar=document.getElementById('progress');
   window.addEventListener('scroll',function(){
