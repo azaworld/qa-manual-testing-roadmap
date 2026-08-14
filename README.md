@@ -6,6 +6,8 @@
 
 🌐 **Play it as a gamified website:** [azaworld.github.io/qa-roadmap](https://azaworld.github.io/qa-roadmap/) — pick a track, mark lessons complete, earn XP, levels & badges (saved in your browser), and practice on real apps in [The Playground](17-playground.md).
 
+📊 **See everything at a glance:** the [QA Learning Dashboard](https://azaworld.github.io/qa-roadmap/dashboard.html) maps the whole curriculum, shows your progress ring & level, and links straight to every lesson and resource.
+
 <p>
   <a href="https://azantor.xyz"><img src="https://img.shields.io/badge/by-Arifuzzaman%20Antor-7c3aed?style=flat-square" /></a>
   <a href="https://www.upwork.com/freelancers/~01b1ba72ba57683f43"><img src="https://img.shields.io/badge/Upwork-Top%20Rated%20★5.0-14a800?style=flat-square&logo=upwork&logoColor=white" /></a>

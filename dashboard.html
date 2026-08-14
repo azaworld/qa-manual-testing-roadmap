@@ -1,0 +1,163 @@
+---
+title: Dashboard
+layout: default
+---
+<style>
+/* hide the generic lesson controls on the hub */
+.article > .complete-wrap, .article > .pager { display:none !important; }
+
+.dash-sub{color:var(--text-soft);font-size:1.02rem;margin:.2em 0 1.4em}
+
+/* progress hero */
+.dash-hero{display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:linear-gradient(120deg,var(--bg-soft),transparent);border:1px solid var(--border);border-radius:16px;padding:22px 24px;margin-bottom:14px}
+.dash-ring{position:relative;width:132px;height:132px;flex-shrink:0}
+.dash-ring svg{transform:rotate(-90deg)}
+.dash-ring .ring-bg{fill:none;stroke:var(--border);stroke-width:12}
+.dash-ring .ring-fg{fill:none;stroke:url(#dashgrad);stroke-width:12;stroke-linecap:round;stroke-dasharray:339.29;stroke-dashoffset:339.29;transition:stroke-dashoffset 1.1s cubic-bezier(.5,0,.2,1)}
+.dash-ring .ring-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.dash-ring .ring-pct{font-size:1.7rem;font-weight:800;color:var(--text)}
+.dash-ring .ring-lbl{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft)}
+.hero-info{flex:1;min-width:220px}
+.hero-level{font-size:1.5rem;font-weight:800;margin:0 0 2px}
+.hero-level .lv{color:var(--accent)}
+.hero-meta{color:var(--text-soft);font-size:.95rem;margin-bottom:12px}
+.hero-bar{height:10px;border-radius:99px;background:var(--bg-soft);overflow:hidden;border:1px solid var(--border)}
+.hero-bar span{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#22c55e,#22d3ee,#a78bfa);transition:width 1.1s cubic-bezier(.5,0,.2,1)}
+.hero-next{font-size:.85rem;color:var(--text-soft);margin-top:8px}
+.dash-reset{background:none;border:1px solid var(--border);color:var(--text-soft);border-radius:8px;padding:5px 11px;font-size:.82rem;cursor:pointer;margin-top:10px}
+.dash-reset:hover{border-color:var(--accent);color:var(--accent)}
+
+/* the map */
+.phase{margin:26px 0 6px;opacity:0;transform:translateY(12px);animation:phaseIn .5s ease forwards}
+.phase-title{font-size:.8rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--text-soft);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.phase-title::after{content:"";flex:1;height:1px;background:var(--border)}
+.phase-count{font-weight:600;color:var(--accent);font-size:.78rem}
+.phase-row{display:flex;flex-wrap:wrap;gap:10px}
+.dash-node{position:relative;display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);border-radius:11px;padding:10px 14px;text-decoration:none;color:var(--text);background:var(--bg);font-size:.9rem;font-weight:600;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);animation:nodeIn .4s ease forwards;animation-delay:calc(var(--i,0)*45ms)}
+.dash-node:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 20px rgba(16,24,40,.16)}
+.dash-node .nc{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;flex-shrink:0;transition:.25s}
+.dash-node.done{border-color:#22c55e}
+.dash-node.done .nc{background:#22c55e;border-color:#22c55e}
+.dash-node.done .nc::after{content:"✓"}
+
+/* tracks */
+.track-mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.track-mini{border:1.5px solid var(--border);border-top:4px solid var(--tc,var(--accent));border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--text);display:block;box-shadow:var(--shadow)}
+.track-mini:hover{transform:translateY(-2px);border-color:var(--tc)}
+.tm-top{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.95rem}
+.tm-pct{color:var(--text-soft);font-weight:600;font-size:.82rem}
+.tm-bar{height:7px;border-radius:99px;background:var(--bg-soft);overflow:hidden;margin-top:9px}
+.tm-bar span{display:block;height:100%;width:0;border-radius:99px;background:var(--tc,var(--accent));transition:width .9s cubic-bezier(.5,0,.2,1)}
+
+@keyframes phaseIn{to{opacity:1;transform:none}}
+@keyframes nodeIn{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.phase,.dash-node{animation:none;opacity:1;transform:none}}
+</style>
+
+<h1>📊 QA Learning Dashboard</h1>
+<p class="dash-sub">Your whole QA journey at a glance — every topic you need to learn, your progress, and a direct link to each lesson and resource. Tick lessons complete as you go; this dashboard updates automatically.</p>
+
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="dashgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22c55e"/><stop offset="50%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs></svg>
+
+<div class="dash-hero">
+  <div class="dash-ring">
+    <svg width="132" height="132" viewBox="0 0 132 132">
+      <circle class="ring-bg" cx="66" cy="66" r="54"/>
+      <circle class="ring-fg" id="ringFg" cx="66" cy="66" r="54"/>
+    </svg>
+    <div class="ring-num"><span class="ring-pct" id="ringPct">0%</span><span class="ring-lbl">complete</span></div>
+  </div>
+  <div class="hero-info">
+    <p class="hero-level">⭐ Level <span class="lv" id="heroLv">1</span> · <span id="heroName">Rookie</span></p>
+    <p class="hero-meta"><span id="heroDone">0</span> of <span id="heroTotal">0</span> lessons complete · <span id="heroXp">0</span> XP</p>
+    <div class="hero-bar"><span id="heroBar"></span></div>
+    <p class="hero-next" id="heroNext"></p>
+    <button class="dash-reset" id="dashReset" type="button">↺ reset progress</button>
+  </div>
+</div>
+
+<h2>🗺️ The full learning map</h2>
+<p class="dash-sub" style="margin-bottom:4px">Every stage and resource, grouped by phase. Green ring = completed. Click any node to open it.</p>
+
+{% for group in site.data.nav %}
+<div class="phase">
+  <div class="phase-title">{{ group.title }} <span class="phase-count" data-phase></span></div>
+  <div class="phase-row">
+    {% for item in group.items %}
+    <a class="dash-node" style="--i:{{ forloop.index0 }}" data-url="{{ item.url | relative_url }}" href="{{ item.url | relative_url }}">
+      <span class="nc"></span><span class="node-title">{{ item.title }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+
+<h2>🎯 Track progress</h2>
+<p class="dash-sub" style="margin-bottom:4px">How far you are along each learning path. Click to jump in.</p>
+<div class="track-mini-grid">
+  {% for t in site.data.tracks %}
+  <a class="track-mini" style="--tc:{{ t.color }}" href="{{ t.start | relative_url }}"
+     data-lessons="{% for l in t.lessons %}{{ l | relative_url }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+    <div class="tm-top"><span>{{ t.icon }} {{ t.title }}</span><span class="tm-pct">0%</span></div>
+    <div class="tm-bar"><span></span></div>
+  </a>
+  {% endfor %}
+</div>
+
+<script>
+(function(){
+  var KEY='qa-progress-v1';
+  function getDone(){try{return JSON.parse(localStorage.getItem(KEY))||[];}catch(e){return [];}}
+  var LEVELS=[{min:0,n:'Rookie'},{min:1,n:'Explorer'},{min:3,n:'Analyst'},{min:6,n:'Tester'},{min:10,n:'Senior Tester'},{min:15,n:'QA Lead'},{min:20,n:'QA Master'}];
+  function levelIdx(c){var i=0;for(var k=0;k<LEVELS.length;k++)if(c>=LEVELS[k].min)i=k;return i;}
+  var C=2*Math.PI*54; // ring circumference
+  var homePath=document.querySelector('.brand')?document.querySelector('.brand').pathname:'/';
+
+  var nodes=[].slice.call(document.querySelectorAll('.dash-node'));
+  var lessonNodes=nodes.filter(function(n){return n.getAttribute('data-url')!==homePath;});
+  var TOTAL=lessonNodes.length;
+
+  function render(){
+    var done=getDone(), set={}; done.forEach(function(p){set[p]=1;});
+    // nodes
+    nodes.forEach(function(n){
+      var on=!!set[n.getAttribute('data-url')];
+      n.classList.toggle('done',on);
+    });
+    // per-phase counts
+    document.querySelectorAll('.phase').forEach(function(ph){
+      var ns=[].slice.call(ph.querySelectorAll('.dash-node')).filter(function(n){return n.getAttribute('data-url')!==homePath;});
+      if(!ns.length){var el=ph.querySelector('[data-phase]'); if(el)el.textContent=''; return;}
+      var d=ns.filter(function(n){return set[n.getAttribute('data-url')];}).length;
+      var el=ph.querySelector('[data-phase]'); if(el)el.textContent=d+' / '+ns.length;
+    });
+    // overall
+    var count=lessonNodes.filter(function(n){return set[n.getAttribute('data-url')];}).length;
+    var pct=TOTAL?Math.round(count/TOTAL*100):0;
+    var li=levelIdx(count);
+    document.getElementById('ringPct').textContent=pct+'%';
+    document.getElementById('ringFg').style.strokeDashoffset=C*(1-pct/100);
+    document.getElementById('heroLv').textContent=(li+1);
+    document.getElementById('heroName').textContent=LEVELS[li].n;
+    document.getElementById('heroDone').textContent=count;
+    document.getElementById('heroTotal').textContent=TOTAL;
+    document.getElementById('heroXp').textContent=count*100;
+    document.getElementById('heroBar').style.width=pct+'%';
+    var nextEl=document.getElementById('heroNext');
+    if(li<LEVELS.length-1){var need=LEVELS[li+1].min-count;nextEl.textContent=need+' more lesson'+(need===1?'':'s')+' → Level '+(li+2)+' ('+LEVELS[li+1].n+')';}
+    else nextEl.textContent='🏆 Max level reached — you’ve completed the whole roadmap!';
+    // tracks
+    document.querySelectorAll('.track-mini').forEach(function(card){
+      var urls=(card.getAttribute('data-lessons')||'').split(',').filter(Boolean);
+      var d=urls.filter(function(u){return set[u];}).length, t=urls.length, p=t?Math.round(d/t*100):0;
+      card.querySelector('.tm-pct').textContent=p+'%';
+      card.querySelector('.tm-bar span').style.width=p+'%';
+    });
+  }
+  // paint after first frame so ring + bars animate from 0
+  requestAnimationFrame(function(){requestAnimationFrame(render);});
+  window.addEventListener('storage',function(e){if(e.key===KEY)render();});
+  var r=document.getElementById('dashReset');
+  if(r)r.addEventListener('click',function(){if(confirm('Reset all lesson progress in this browser?')){localStorage.setItem(KEY,'[]');render();}});
+})();
+</script>

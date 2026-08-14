@@ -2,6 +2,8 @@
   items:
     - title: "The Roadmap — Start Here"
       url: "/"
+    - title: "📊 Dashboard (your map & progress)"
+      url: "/dashboard.html"
     - title: "🎯 Get Hired as Sr. QA (capstone)"
       url: "/18-capstone-sr-qa.html"
     - title: "🎮 The Playground (practice)"
