@@ -125,7 +125,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 @media (max-width:760px){ .diagram-scroll{-webkit-overflow-scrolling:touch} .diagram-scroll img{min-width:560px} }
 /* Mermaid flowcharts — clean, high-contrast, animated */
 .mermaid{margin:16px 0;overflow-x:auto;text-align:center;min-height:44px}
-.mermaid svg{max-width:100%;height:auto}
+.mermaid svg{display:block;margin:0 auto;height:auto}
 /* while rendering: hide raw source + show a loading hint (but never permanently blank — see .mmfail) */
 .mermaid:not([data-processed]):not(.mmfail){color:transparent;position:relative}
 .mermaid:not([data-processed]):not(.mmfail)::after{content:"⏳ rendering diagram…";position:absolute;left:0;right:0;top:10px;color:var(--text-soft);font-size:.85rem}
@@ -402,7 +402,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
       ? {primaryColor:'#16204a',primaryBorderColor:'#22d3ee',primaryTextColor:'#e9edfb',lineColor:'#93a7e0',secondaryColor:'#2a1e52',secondaryBorderColor:'#a78bfa',tertiaryColor:'#10233a',tertiaryBorderColor:'#3b4368',clusterBkg:'#10233a',edgeLabelBackground:'#0d1130'}
       : {primaryColor:'#e9f7f9',primaryBorderColor:'#0e7c86',primaryTextColor:'#0f2b30',lineColor:'#0e7c86',secondaryColor:'#efe9ff',secondaryBorderColor:'#7c3aed',tertiaryColor:'#eef4ff',tertiaryBorderColor:'#c7d3e6',clusterBkg:'#eef4ff',edgeLabelBackground:'#ffffff'};
     v.fontFamily='-apple-system,Segoe UI,Roboto,Arial'; v.fontSize='15px'; v.lineWidth='2px';
-    return {startOnLoad:false, theme:'base', securityLevel:'loose', flowchart:{curve:'basis',useMaxWidth:true,padding:14,nodeSpacing:48,rankSpacing:58}, themeVariables:v};
+    return {startOnLoad:false, theme:'base', securityLevel:'loose', flowchart:{curve:'basis',useMaxWidth:false,htmlLabels:true,padding:12,nodeSpacing:36,rankSpacing:46}, themeVariables:v};
   }
   function fallback(){ divs.forEach(function(d){ if(!d.hasAttribute('data-processed')) d.classList.add('mmfail'); }); }
   var mermaid;
