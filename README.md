@@ -54,6 +54,8 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 | **11** | [AI × QA (MCP + Playwright)](12-ai-for-qa.md) | Use AI on every QA task, drive browsers with AI agents via MCP, test AI systems (evals), and steer your career into AI QA |
 | **12** | [API Testing Deep Dive](13-api-testing-deep-dive.md) | Own API quality end-to-end: HTTP, negative design, auth, contract testing, GraphQL, automation-ready Postman/Newman |
 | **13** | [Security Testing](14-security-testing.md) | Find the OWASP Top 10 bugs functional testing misses — IDOR, XSS, injection — with ZAP/Burp, ethically |
+| **14** | [Automation Deep Dive](15-automation-deep-dive.md) | Build real, maintainable UI + API automation: Playwright/Selenium, the pyramid, POM, locators & waits, data-driven, CI/CD, reporting |
+| **15** | [Performance Testing](16-performance-testing.md) | Load, stress, spike & soak testing with k6/JMeter — percentile metrics, methodology, bottleneck analysis, CI gates |
 
 **Templates you can copy today:** [Test Plan](templates/test-plan-template.md) · [Test Case](templates/test-case-template.md) · [Bug Report](templates/bug-report-template.md)
 

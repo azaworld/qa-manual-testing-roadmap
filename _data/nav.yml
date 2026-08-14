@@ -42,6 +42,10 @@
       url: "/13-api-testing-deep-dive.html"
     - title: "Stage 13 · Security Testing"
       url: "/14-security-testing.html"
+    - title: "Stage 14 · Automation Deep Dive"
+      url: "/15-automation-deep-dive.html"
+    - title: "Stage 15 · Performance Testing"
+      url: "/16-performance-testing.html"
 
 - title: "📄 Templates"
   items:

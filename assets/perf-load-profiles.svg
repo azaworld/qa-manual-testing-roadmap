@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1200 300" width="1200" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Performance test load profiles: load is a steady ramp and hold, stress ramps past the breaking point, spike jumps suddenly, soak holds for a long time">
+  <rect width="1200" height="300" rx="14" fill="#0d1130"/>
+  <text x="600" y="40" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f5f9">📈 Performance Test Load Profiles</text>
+
+  <!-- reusable: each panel has axes (always visible) + an animated drawn line + a moving dot -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+
+    <!-- Panel 1: LOAD -->
+    <g>
+      <line x1="60" y1="90" x2="60" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <line x1="60" y1="210" x2="270" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <text x="165" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#22c55e">LOAD</text>
+      <text x="165" y="238" text-anchor="middle" font-size="12" fill="#93a0c2">ramp to peak &amp; hold</text>
+      <path d="M 60 200 L 110 110 L 210 110 L 260 200" fill="none" stroke="#22c55e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="360" stroke-dashoffset="360">
+        <animate attributeName="stroke-dashoffset" from="360" to="0" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <circle r="5" fill="#f1f5f9"><animateMotion dur="4s" repeatCount="indefinite" path="M 60 200 L 110 110 L 210 110 L 260 200"/></circle>
+    </g>
+
+    <!-- Panel 2: STRESS -->
+    <g>
+      <line x1="360" y1="90" x2="360" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <line x1="360" y1="210" x2="570" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <text x="465" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#eab308">STRESS</text>
+      <text x="465" y="238" text-anchor="middle" font-size="12" fill="#93a0c2">ramp past breaking point</text>
+      <path d="M 360 200 L 400 165 L 440 135 L 480 108 L 515 92 L 520 200" fill="none" stroke="#eab308" stroke-width="3" stroke-linejoin="round" stroke-dasharray="420" stroke-dashoffset="420">
+        <animate attributeName="stroke-dashoffset" from="420" to="0" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <text x="524" y="150" font-size="16" opacity="0">💥<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.82;0.9;0.97;1" dur="4s" repeatCount="indefinite"/></text>
+      <circle r="5" fill="#f1f5f9"><animateMotion dur="4s" repeatCount="indefinite" path="M 360 200 L 400 165 L 440 135 L 480 108 L 515 92 L 520 200"/></circle>
+    </g>
+
+    <!-- Panel 3: SPIKE -->
+    <g>
+      <line x1="660" y1="90" x2="660" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <line x1="660" y1="210" x2="870" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <text x="765" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#f472b6">SPIKE</text>
+      <text x="765" y="238" text-anchor="middle" font-size="12" fill="#93a0c2">sudden surge, then drop</text>
+      <path d="M 660 195 L 740 195 L 742 100 L 790 100 L 792 195 L 860 195" fill="none" stroke="#f472b6" stroke-width="3" stroke-linejoin="round" stroke-dasharray="420" stroke-dashoffset="420">
+        <animate attributeName="stroke-dashoffset" from="420" to="0" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <circle r="5" fill="#f1f5f9"><animateMotion dur="4s" repeatCount="indefinite" path="M 660 195 L 740 195 L 742 100 L 790 100 L 792 195 L 860 195"/></circle>
+    </g>
+
+    <!-- Panel 4: SOAK -->
+    <g>
+      <line x1="960" y1="90" x2="960" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <line x1="960" y1="210" x2="1170" y2="210" stroke="#3b4368" stroke-width="1.5"/>
+      <text x="1065" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#a78bfa">SOAK</text>
+      <text x="1065" y="238" text-anchor="middle" font-size="12" fill="#93a0c2">moderate load, held for hours</text>
+      <path d="M 960 195 L 1000 125 L 1170 125" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linejoin="round" stroke-dasharray="330" stroke-dashoffset="330">
+        <animate attributeName="stroke-dashoffset" from="330" to="0" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <circle r="5" fill="#f1f5f9"><animateMotion dur="4s" repeatCount="indefinite" path="M 960 195 L 1000 125 L 1170 125"/></circle>
+    </g>
+  </g>
+
+  <text x="600" y="286" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7d89ad">y-axis = concurrent users (load) · x-axis = time — each shape answers a different question</text>
+</svg>

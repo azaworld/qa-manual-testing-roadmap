@@ -1,0 +1,60 @@
+<svg viewBox="0 0 1200 380" width="1200" height="380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Test automation pyramid: many fast unit tests at the base, fewer API/integration tests in the middle, few slow E2E UI tests at the top">
+  <rect width="1200" height="380" rx="14" fill="#0d1130"/>
+  <text x="600" y="46" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f5f9">🔺 The Test Automation Pyramid</text>
+
+  <!-- pyramid tiers (always visible) -->
+  <!-- top: E2E -->
+  <polygon points="360,80 305,158 415,158" fill="#3d1533" stroke="#f472b6" stroke-width="2"/>
+  <!-- middle: API/Integration -->
+  <polygon points="305,158 415,158 458,236 262,236" fill="#1e2a52" stroke="#60a5fa" stroke-width="2"/>
+  <!-- base: Unit -->
+  <polygon points="262,236 458,236 520,314 200,314" fill="#0e3a2f" stroke="#22c55e" stroke-width="2"/>
+
+  <!-- cycling highlight overlay per tier (6s loop) -->
+  <polygon points="360,80 305,158 415,158" fill="#f472b6" opacity="0">
+    <animate attributeName="opacity" values="0;0.35;0;0;0" keyTimes="0;0.12;0.24;0.9;1" dur="6s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon points="305,158 415,158 458,236 262,236" fill="#60a5fa" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.3;0;0" keyTimes="0;0.3;0.42;0.55;1" dur="6s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon points="262,236 458,236 520,314 200,314" fill="#22c55e" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0.28;0" keyTimes="0;0.6;0.72;0.82;1" dur="6s" repeatCount="indefinite"/>
+  </polygon>
+
+  <!-- tier labels inside -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle" fill="#f1f5f9" font-weight="700">
+    <text x="360" y="140" font-size="15">E2E / UI</text>
+    <text x="360" y="205" font-size="16">API / Integration</text>
+    <text x="360" y="285" font-size="17">Unit</text>
+  </g>
+
+  <!-- left axis: speed/cost -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#7d89ad" font-size="12.5">
+    <line x1="120" y1="90" x2="120" y2="305" stroke="#3b4368" stroke-width="2"/>
+    <polygon points="120,90 115,102 125,102" fill="#3b4368"/>
+    <polygon points="120,305 115,293 125,293" fill="#3b4368"/>
+    <text x="112" y="120" text-anchor="end" fill="#f472b6">slower</text>
+    <text x="112" y="136" text-anchor="end">costlier</text>
+    <text x="112" y="152" text-anchor="end">flakier</text>
+    <text x="112" y="285" text-anchor="end" fill="#22c55e">faster</text>
+    <text x="112" y="301" text-anchor="end">cheaper</text>
+    <!-- moving marker down the axis -->
+    <circle cx="120" r="6" fill="#f1f5f9">
+      <animate attributeName="cy" values="100;300;100" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- right side: counts + guidance -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#dbe3f4" font-size="15">
+    <text x="600" y="120" font-weight="700" fill="#f9a8d4">▲ Few — critical journeys only</text>
+    <text x="600" y="144" font-size="13" fill="#93a0c2">whole-browser flows · slow · valuable · flaky if overused</text>
+
+    <text x="600" y="205" font-weight="700" fill="#93c5fd">◆ More — your QA sweet spot</text>
+    <text x="600" y="229" font-size="13" fill="#93a0c2">test how services talk · fast · stable · high value</text>
+
+    <text x="600" y="285" font-weight="700" fill="#86efac">● Many — developer-owned</text>
+    <text x="600" y="309" font-size="13" fill="#93a0c2">one function each · milliseconds · huge coverage</text>
+  </g>
+
+  <text x="600" y="360" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#eab308">⚠ Avoid the inverted pyramid — push every test as far DOWN as it can go</text>
+</svg>

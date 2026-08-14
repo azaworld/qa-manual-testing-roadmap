@@ -37,7 +37,7 @@
 | **Security (manual level)** | Obvious holes | Try other users' URLs (IDOR), inspect what the API returns vs what's shown, test role permissions, `<script>` in inputs |
 | **Recovery/negative** | Behavior under failure | Kill network mid-payment, force-close app during sync, submit while session expired |
 
-Performance and security have deep specialist ends (k6/JMeter, ZAP/Burp) — as a manual QA you find the *first layer* and escalate.
+Performance and security have deep specialist ends — as a manual QA you find the *first layer* and escalate. Go deeper in the specialist tracks: [Performance Testing](16-performance-testing.md) (k6/JMeter, load/stress/spike/soak) and [Security Testing](14-security-testing.md) (OWASP Top 10, ZAP/Burp).
 
 ## 3. API testing — manual, with Postman
 
