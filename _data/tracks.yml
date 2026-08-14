@@ -34,11 +34,11 @@
 
 - key: ai
   icon: "🧠"
-  title: "AI × QA"
-  blurb: "Use AI on every task, drive browsers with MCP + Playwright agents, test AI systems."
+  title: "AI × QA (100×)"
+  blurb: "Use AI on every task, drive browsers with MCP agents, test AI systems, and 100× your output."
   color: "#a78bfa"
   start: "/12-ai-for-qa.html"
-  lessons: ["/12-ai-for-qa.html"]
+  lessons: ["/12-ai-for-qa.html","/22-ai-powered-qa.html"]
 
 - key: api
   icon: "🔌"

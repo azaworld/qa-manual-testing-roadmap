@@ -54,6 +54,8 @@
       url: "/15-automation-deep-dive.html"
     - title: "Stage 15 · Performance Testing"
       url: "/16-performance-testing.html"
+    - title: "Stage 16 · AI-Powered QA (100×)"
+      url: "/22-ai-powered-qa.html"
 
 - title: "📚 Reference & Interview"
   items:

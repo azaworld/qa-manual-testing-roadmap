@@ -58,6 +58,7 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 | **13** | [Security Testing](14-security-testing.md) | Find the OWASP Top 10 bugs functional testing misses — IDOR, XSS, injection — with ZAP/Burp, ethically |
 | **14** | [Automation Deep Dive](15-automation-deep-dive.md) | Build real, maintainable UI + API automation: Playwright/Selenium, the pyramid, POM, locators & waits, data-driven, CI/CD, reporting |
 | **15** | [Performance Testing](16-performance-testing.md) | Load, stress, spike & soak testing with k6/JMeter — percentile metrics, methodology, bottleneck analysis, CI gates |
+| **16** | [AI-Powered QA (100×)](22-ai-powered-qa.md) | Become the 100× tester: what to know *before* AI, what to automate, the speed playbook, adoption ladder, prompt library, guardrails & metrics |
 
 ### 🎯 The Capstone — put it all together
 
