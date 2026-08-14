@@ -142,6 +142,10 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 /* "Teach this" callout box */
 .teachbox{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:var(--note-bg);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:10px 14px;margin:10px 0 18px;font-size:.9rem}
 .teachbox b{color:var(--accent)}
+/* responsive YouTube embeds */
+.video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:14px 0;border:1px solid var(--border);background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-cap{font-size:.85rem;color:var(--text-soft);margin:-6px 0 16px}
 /* tablet & below: sidebar becomes a drawer */
 @media (max-width:1020px){
   .sidebar{width:min(300px,82vw);transform:translateX(-100%);transition:transform .25s ease}

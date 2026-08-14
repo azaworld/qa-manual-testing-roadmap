@@ -70,7 +70,7 @@
   blurb: "Junior → Lead ladder, portfolio building, and interview questions with model answers."
   color: "#f472b6"
   start: "/07-career-journey.html"
-  lessons: ["/07-career-journey.html","/08-interview-prep.html","/11-resources.html"]
+  lessons: ["/07-career-journey.html","/27-resume-cv.html","/08-interview-prep.html","/11-resources.html"]
 
 - key: interview
   icon: "💬"
@@ -78,7 +78,7 @@
   blurb: "Top 100+ questions with model answers + a mock-interview drill. Walk in ready."
   color: "#38bdf8"
   start: "/19-interview-bank.html"
-  lessons: ["/08-interview-prep.html","/19-interview-bank.html"]
+  lessons: ["/27-resume-cv.html","/08-interview-prep.html","/19-interview-bank.html"]
 
 - key: playground
   icon: "🎮"

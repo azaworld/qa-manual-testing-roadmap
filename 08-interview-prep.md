@@ -24,6 +24,8 @@ Most QA hiring runs through 3–5 rounds. Knowing the shape removes the fear:
 
 ## 2. Before the interview: what actually gets you in the room
 
+Start with the complete [QA Resume & CV tutorial](27-resume-cv.md) and its [copyable master template](templates/qa-resume-cv-template.md). The interview begins before the call: your resume decides which evidence the interviewer asks you to defend.
+
 You're assessed before you speak. Invest here first — details in [Career Journey](07-career-journey.md):
 
 - **Résumé that proves outcomes.** Every bullet = *action + object + result*: "Designed 120 test cases (EP/BVA) for checkout; found 14 pre-release defects including a double-charge bug" beats "responsible for testing."

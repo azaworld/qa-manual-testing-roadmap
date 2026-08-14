@@ -2,6 +2,13 @@
 
 > **Goal:** use AI as leverage on every QA activity, drive browsers with AI agents (MCP + Playwright), learn to test AI systems themselves — and position your career for the biggest shift QA has ever seen. This is where I spend my working life now (AZAI Labs: *build with agents, not headcount*), so this chapter is field notes, not theory.
 
+## 🎥 Playwright foundation before MCP
+
+AI agents can generate and heal tests, but you still need to understand the Playwright code they produce. Start with this AZADEMY course preview, then return to the MCP workflow below.
+
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/odZwL785YnQ?list=PLPKx9CSS1LOdLWBqb4bkbV8swt6LOh8C_&amp;rel=0" title="Mastering Playwright for Test Automation: Beginner to Advanced — AZADEMY" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p class="video-cap">Learn the browser-automation foundation first: <a href="https://www.youtube.com/watch?v=odZwL785YnQ&list=PLPKx9CSS1LOdLWBqb4bkbV8swt6LOh8C_">AZADEMY Playwright playlist ↗</a>. Then use MCP to plan, explore, generate, run and heal tests — while you review the assertions.</p>
+
 ## 1. The honest picture first
 
 AI does not replace testing thinking — it **amplifies** it. Everything from Stages 0–2 (risk, test design, judgment) matters *more*, because AI produces volume and you must judge quality. The testers being displaced are the pure-execution ones; the testers being promoted are the ones directing AI.

@@ -41,6 +41,8 @@
       url: "/07-career-journey.html"
     - title: "Stage 7 · Interview Preparation"
       url: "/08-interview-prep.html"
+    - title: "Resume & CV · Junior → SDET"
+      url: "/27-resume-cv.html"
     - title: "Stage 8 · Path to Automation"
       url: "/09-path-to-automation.html"
     - title: "Stage 10 · Sources & Further Learning"
@@ -82,6 +84,8 @@
       url: "/templates/test-case-template.html"
     - title: "Bug Report Template"
       url: "/templates/bug-report-template.html"
+    - title: "QA Resume / CV Template"
+      url: "/templates/qa-resume-cv-template.html"
 
 - title: "🧪 Worked Examples"
   items:

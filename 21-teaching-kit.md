@@ -36,7 +36,7 @@
 - 🎙️ On Petstore, fire a GET and read status/body/headers aloud; then send a bad request and show the 400. On httpbingo hit `/status/500` and `/delay/3`. In the GraphQL playground, over-fetch fields to show field-level testing.
 
 ## Section: Automation (Playwright) → [Stage 8](09-path-to-automation.md) · [Stage 14](15-automation-deep-dive.md)
-- 🖥️ [playwright.dev](https://playwright.dev/) (docs) · target = [SauceDemo](https://www.saucedemo.com/) · **`npx playwright codegen saucedemo.com`** (record live) · [Playwright Trace Viewer online](https://trace.playwright.dev/) · your [GitHub Actions](https://github.com/azaworld/qa-roadmap/actions)
+- 🖥️ [AZADEMY Playwright beginner→advanced playlist](https://www.youtube.com/watch?v=odZwL785YnQ&list=PLPKx9CSS1LOdLWBqb4bkbV8swt6LOh8C_) · [playwright.dev](https://playwright.dev/) (docs) · target = [SauceDemo](https://www.saucedemo.com/) · **`npx playwright codegen saucedemo.com`** (record live) · [Playwright Trace Viewer online](https://trace.playwright.dev/) · your [GitHub Actions](https://github.com/azaworld/qa-roadmap/actions)
 - 🎙️ Run `codegen` on camera — click through login and watch code generate, then *rewrite* it with role-based locators + a page object. Drop a trace into trace.playwright.dev and step through the timeline. Show a green CI run.
 
 ## Section: Performance (k6) → [Stage 15](16-performance-testing.md)
@@ -54,6 +54,10 @@
 ## Section: Interviews & mock → [Stage 7](08-interview-prep.md) · [Interview Bank](19-interview-bank.md)
 - 🖥️ [Interview Bank](19-interview-bank.md) (your question set) · [Pramp](https://www.pramp.com/) · [interviewing.io](https://interviewing.io/)
 - 🎙️ Screen-share the Interview Bank and answer 5 rapid-fire questions live, then do the 30-minute mock protocol on camera as a worked example.
+
+## Section: Resume & CV → [Resume tutorial](27-resume-cv.md)
+- 🖥️ A real QA/SDET vacancy · [QA Resume / CV master template](templates/qa-resume-cv-template.md) · [Reactive Resume](https://rxresu.me/) or [FlowCV](https://flowcv.com/) · learner's GitHub portfolio
+- 🎙️ Extract 12 job keywords, choose the correct target title, rewrite one weak duty into a measurable result, add two proof links, then export and test the PDF. Show AI doing a gap analysis—but reject any invented experience.
 
 ---
 

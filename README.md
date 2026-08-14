@@ -49,6 +49,7 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 |:---:|---|---|
 | **6** | [Career Journey](07-career-journey.md) | Map yourself Junior → Mid → Senior → Lead, build a portfolio, get hired |
 | **7** | [Interview Preparation](08-interview-prep.md) | Answer the questions that actually get asked — with model answers |
+| **CV** | [QA Resume & CV](27-resume-cv.md) | Write an ATS-friendly Junior, Mid, Senior QA or SDET resume with copy-ready templates and measurable bullets |
 | **8** | [Path to Automation](09-path-to-automation.md) | Know when and how to add automation without abandoning your manual craft |
 | **10** | [Sources & Further Learning](11-resources.md) | The curated library: books, courses, practice sites, podcasts — with a per-stage reading map |
 
@@ -67,11 +68,11 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 
 > **[Get Hired as a Sr. QA — the Modern Ladder](18-capstone-sr-qa.md)** ties the whole roadmap into one climb: rung-by-rung **Learn → Build → Prove**, the modern **AI + Automation + MCP** workflow (with step-by-step MCP setup), a Sr. QA readiness checklist, and a 6-month plan. Start here if you want the end-to-end path to the job.
 
-**Templates you can copy today:** [Test Plan](templates/test-plan-template.md) · [Test Case](templates/test-case-template.md) · [Bug Report](templates/bug-report-template.md)
+**Templates you can copy today:** [Test Plan](templates/test-plan-template.md) · [Test Case](templates/test-case-template.md) · [Bug Report](templates/bug-report-template.md) · [QA Resume / CV](templates/qa-resume-cv-template.md)
 
 **Worked examples:** [E-commerce checkout test cases](examples/ecommerce-checkout-test-cases.md) · [Real bug report](examples/sample-bug-report.md)
 
-**📚 Reference & interview prep:** [🤖 AI Tools Directory (auto-updated)](23-ai-tools.md) · [Interview Bank (Top 100+ Q&A)](19-interview-bank.md) · [Cheatsheets](20-cheatsheets.md) · [🎬 Teaching Kit — live demo sites](21-teaching-kit.md) (screen-share these to teach any section, no slides)
+**📚 Career & interview prep:** [QA Resume & CV — Junior → SDET](27-resume-cv.md) · [Interview Bank (Top 100+ Q&A)](19-interview-bank.md) · [🤖 AI Tools Directory (auto-updated)](23-ai-tools.md) · [Cheatsheets](20-cheatsheets.md) · [🎬 Teaching Kit — live demo sites](21-teaching-kit.md) (screen-share these to teach any section, no slides)
 
 **🇧🇩 Job hunting in Bangladesh?** Browse the searchable [directory of 235+ BD software companies](25-bd-companies.md) — filter by tech stack or location to find where to apply.
 

@@ -8,6 +8,8 @@
 
 Each rung = **Learn → Build → Prove.** *Learn* links the chapter. *Build* is the thing you make. *Prove* is the public artifact that goes in your portfolio (a repo, a report, a collection). By the last rung you'll have **6–8 real artifacts** — that portfolio is what actually gets the Sr. QA offer, not a certificate.
 
+When the artifacts are ready, package the evidence using the [QA Resume & CV tutorial](27-resume-cv.md): Junior, Mid, Senior QA and SDET versions are mapped separately, with an ATS-safe [master template](templates/qa-resume-cv-template.md).
+
 > 🎓 Want this as guided video + a certificate? Every rung maps to a course on **[AZADEMY](https://azademy.vercel.app/)** (QA Automation · AI · Playwright · Python · Freelancing). The roadmap is the free textbook; the academy is the classroom.
 
 ---

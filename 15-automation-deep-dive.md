@@ -2,6 +2,13 @@
 
 > **Goal:** build real, maintainable UI + API automation from scratch — language basics, tool choice, the Page Object Model, locators & waits that don't flake, data-driven design, CI/CD, and reporting. [Stage 8](09-path-to-automation.md) told you *when* to automate and *why*; this chapter is the *how*, hands-on. I run Playwright suites in production for client platforms and built the MyGP backend framework from zero — this is the distilled version.
 
+## 🎥 Course preview — Playwright beginner to advanced
+
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/odZwL785YnQ?list=PLPKx9CSS1LOdLWBqb4bkbV8swt6LOh8C_&amp;rel=0" title="Mastering Playwright for Test Automation: Beginner to Advanced — AZADEMY" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p class="video-cap">AZADEMY course preview: <b>Mastering Playwright for Test Automation — Beginner to Advanced</b>. <a href="https://www.youtube.com/watch?v=odZwL785YnQ&list=PLPKx9CSS1LOdLWBqb4bkbV8swt6LOh8C_">Open the full playlist on YouTube ↗</a></p>
+
+Use the video and this chapter together: **watch → reproduce the example → improve the test → commit the proof**. The chapter is your written lab manual; the playlist is the guided demonstration.
+
 ## 1. The mindset: automation is software
 
 Your test suite is a codebase your team depends on. Flaky, unreadable tests are worse than no tests — they erode trust until people ignore red builds. Treat automation with the same care as production code: version control, code review, naming, DRY, and ruthless flakiness control.
