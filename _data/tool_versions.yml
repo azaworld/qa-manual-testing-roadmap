@@ -2,11 +2,27 @@
 # Latest releases of the tracked open-source AI-QA tools.
 updated: "2026-08-14"
 tools:
-  playwright: { repo: "microsoft/playwright", version: "v1.62.1" }
-  playwright-mcp: { repo: "microsoft/playwright-mcp", version: "v0.0.79" }
-  promptfoo: { repo: "promptfoo/promptfoo", version: "0.122.0" }
-  deepeval: { repo: "confident-ai/deepeval", version: "v4.1.7" }
-  ragas: { repo: "explodinggradients/ragas", version: "v0.4.3" }
-  langfuse: { repo: "langfuse/langfuse", version: "v4.11.0" }
-  phoenix: { repo: "Arize-ai/phoenix", version: "arize-phoenix-v20.2.0" }
-  openai-evals: { repo: "openai/evals", version: "{"message":"Not Found","documentation_url":"https://docs.github.com/rest/releases/releases#get-the-latest-release","status":"404"}" }
+  playwright:
+    repo: "microsoft/playwright"
+    version: "v1.62.1"
+  playwright-mcp:
+    repo: "microsoft/playwright-mcp"
+    version: "v0.0.79"
+  promptfoo:
+    repo: "promptfoo/promptfoo"
+    version: "0.122.0"
+  deepeval:
+    repo: "confident-ai/deepeval"
+    version: "v4.1.7"
+  ragas:
+    repo: "explodinggradients/ragas"
+    version: "v0.4.3"
+  langfuse:
+    repo: "langfuse/langfuse"
+    version: "v4.11.0"
+  phoenix:
+    repo: "Arize-ai/phoenix"
+    version: "arize-phoenix-v20.2.0"
+  openai-evals:
+    repo: "openai/evals"
+    version: "rolling"
