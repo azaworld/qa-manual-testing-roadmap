@@ -19,7 +19,7 @@
 | **429** Too Many Requests | Rate limited | Test login/OTP brute-force protection |
 | **500/502/503** Server errors | Server broke | 500 where 400 belongs = unvalidated input reached the server |
 
-🔎 *Demo live:* [httpstat.us](https://httpstat.us/) returns any code on demand · [http.cat](https://http.cat/) for a memorable visual.
+🔎 *Demo live:* [httpbingo.org/status/404](https://httpbingo.org/status/404) returns any code on demand · [http.cat](https://http.cat/) for a memorable visual.
 
 ---
 
@@ -151,7 +151,7 @@ claude mcp add playwright -- npx @playwright/mcp@latest   # AI drives a real bro
 | Need | Site |
 |---|---|
 | Fake REST API | [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/) |
-| Inspect your request | [httpbin.org](https://httpbin.org/) |
+| Inspect your request | [httpbingo.org](https://httpbingo.org/) |
 | Test regex | [regex101.com](https://regex101.com/) |
 | Decode a JWT | [jwt.io](https://jwt.io/) |
 | Validate/format JSON | [jsonlint.com](https://jsonlint.com/) |

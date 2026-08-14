@@ -31,9 +31,9 @@
 - 🎙️ Create a real issue live to show the defect lifecycle (New → Triaged → …). In DevTools, open **Console** (show a JS error), **Network** (throttle to Slow 3G, show a slow call), and **Application** (clear cookies to test first-visit).
 
 ## Section: API testing → [Stage 12](13-api-testing-deep-dive.md)
-- 🖥️ [Swagger Petstore](https://petstore.swagger.io/) — *the* live API teaching tool (try requests in-browser) · [restful-booker](https://restful-booker.herokuapp.com/) · [httpbin](https://httpbin.org/) · [JSONPlaceholder](https://jsonplaceholder.typicode.com/) · **Postman**
+- 🖥️ [Swagger Petstore](https://petstore.swagger.io/) — *the* live API teaching tool (try requests in-browser) · [restful-booker](https://restful-booker.herokuapp.com/) · [httpbingo](https://httpbingo.org/) · [JSONPlaceholder](https://jsonplaceholder.typicode.com/) · **Postman**
 - 🖥️ **GraphQL:** [Countries GraphQL playground](https://countries.trevorblades.com/)
-- 🎙️ On Petstore, fire a GET and read status/body/headers aloud; then send a bad request and show the 400. On httpbin hit `/status/500` and `/delay/3`. In the GraphQL playground, over-fetch fields to show field-level testing.
+- 🎙️ On Petstore, fire a GET and read status/body/headers aloud; then send a bad request and show the 400. On httpbingo hit `/status/500` and `/delay/3`. In the GraphQL playground, over-fetch fields to show field-level testing.
 
 ## Section: Automation (Playwright) → [Stage 8](09-path-to-automation.md) · [Stage 14](15-automation-deep-dive.md)
 - 🖥️ [playwright.dev](https://playwright.dev/) (docs) · target = [SauceDemo](https://www.saucedemo.com/) · **`npx playwright codegen saucedemo.com`** (record live) · [Playwright Trace Viewer online](https://trace.playwright.dev/) · your [GitHub Actions](https://github.com/azaworld/qa-roadmap/actions)
@@ -65,7 +65,7 @@ Keep these pinned while recording any QA lesson:
 |---|---|
 | [SauceDemo](https://www.saucedemo.com/) | UI demos & bugs |
 | [Swagger Petstore](https://petstore.swagger.io/) | API demos |
-| [httpbin](https://httpbin.org/) | show any request/response/status |
+| [httpbingo](https://httpbingo.org/) | show any request/response/status |
 | [regex101](https://regex101.com/) | regex & data validation |
 | [jwt.io](https://jwt.io/) | decode tokens |
 | [jsonlint](https://jsonlint.com/) | format/validate JSON |
