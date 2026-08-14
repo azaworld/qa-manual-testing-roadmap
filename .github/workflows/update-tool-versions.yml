@@ -49,12 +49,15 @@ jobs:
             key="${line%%|*}"; repo="${line##*|}"
             # try latest release; fall back to newest tag; else 'rolling'
             ver="$(gh api "repos/$repo/releases/latest" --jq '.tag_name' 2>/dev/null || true)"
-            if [ -z "$ver" ] || [ "$ver" = "null" ]; then
+            # reject error bodies / non-tag junk (e.g. a 404 JSON) before falling back
+            case "$ver" in ''|null|*'{'*|*'"'*|*' '*) ver="" ;; esac
+            if [ -z "$ver" ]; then
               ver="$(gh api "repos/$repo/tags?per_page=1" --jq '.[0].name' 2>/dev/null || true)"
+              case "$ver" in ''|null|*'{'*|*'"'*|*' '*) ver="" ;; esac
             fi
-            # sanitise: keep only safe version chars (defeats captured JSON/errors, quotes, braces)
+            # sanitise, then require a plausible tag (<=40 chars); otherwise 'rolling'
             ver="$(printf '%s' "$ver" | tr -cd 'A-Za-z0-9._+@-')"
-            if [ -z "$ver" ] || [ "$ver" = "null" ]; then ver="rolling"; fi
+            if ! printf '%s' "$ver" | grep -qE '^[A-Za-z0-9][A-Za-z0-9._+@-]{0,40}$'; then ver="rolling"; fi
             # write BLOCK yaml (never flow maps) so a bad value can't break parsing
             {
               echo "  $key:"

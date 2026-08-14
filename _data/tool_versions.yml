@@ -25,4 +25,4 @@ tools:
     version: "arize-phoenix-v20.2.0"
   openai-evals:
     repo: "openai/evals"
-    version: "messageNotFounddocumentation_urlhttpsdocs.github.comrestreleasesreleasesget-the-latest-releasestatus404"
+    version: "rolling"
