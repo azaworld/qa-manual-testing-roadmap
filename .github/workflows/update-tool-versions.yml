@@ -1,0 +1,71 @@
+name: Update AI-QA tool versions
+
+# Auto-updates _data/tool_versions.yml with the latest releases of tracked
+# open-source AI-QA tools. Runs weekly + on demand. Commits only if something
+# changed (which triggers a Pages rebuild, so the Tools Directory page stays current).
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday 06:00 UTC
+  workflow_dispatch: {}    # run manually from the Actions tab anytime
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest releases and rebuild data file
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          today="$(date -u +%Y-%m-%d)"
+
+          # key|repo  (rolling = tracked but no formal GitHub releases)
+          tools="
+          playwright|microsoft/playwright
+          playwright-mcp|microsoft/playwright-mcp
+          promptfoo|promptfoo/promptfoo
+          deepeval|confident-ai/deepeval
+          ragas|explodinggradients/ragas
+          langfuse|langfuse/langfuse
+          phoenix|Arize-ai/phoenix
+          openai-evals|openai/evals
+          "
+
+          {
+            echo "# Auto-updated by .github/workflows/update-tool-versions.yml — do not edit by hand."
+            echo "# Latest releases of the tracked open-source AI-QA tools."
+            echo "updated: \"$today\""
+            echo "tools:"
+          } > _data/tool_versions.yml
+
+          for line in $tools; do
+            [ -z "$line" ] && continue
+            key="${line%%|*}"; repo="${line##*|}"
+            # try latest release; fall back to newest tag; else 'rolling'
+            ver="$(gh api "repos/$repo/releases/latest" --jq '.tag_name' 2>/dev/null || true)"
+            if [ -z "$ver" ] || [ "$ver" = "null" ]; then
+              ver="$(gh api "repos/$repo/tags?per_page=1" --jq '.[0].name' 2>/dev/null || true)"
+            fi
+            if [ -z "$ver" ] || [ "$ver" = "null" ]; then ver="rolling"; fi
+            echo "  $key: { repo: \"$repo\", version: \"$ver\" }" >> _data/tool_versions.yml
+          done
+
+          echo "----- new file -----"; cat _data/tool_versions.yml
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- _data/tool_versions.yml; then
+            echo "No version changes."
+          else
+            git config user.name "qa-roadmap-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add _data/tool_versions.yml
+            git commit -m "chore: refresh AI-QA tool versions [skip ci]"
+            git push
+          fi

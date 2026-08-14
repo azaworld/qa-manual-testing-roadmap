@@ -59,6 +59,8 @@
 
 - title: "📚 Reference & Interview"
   items:
+    - title: "🤖 AI Tools Directory (auto-updated)"
+      url: "/23-ai-tools.html"
     - title: "💬 Interview Bank (Top 100+)"
       url: "/19-interview-bank.html"
     - title: "📌 Cheatsheets"
