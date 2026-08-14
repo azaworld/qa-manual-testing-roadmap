@@ -1,0 +1,65 @@
+---
+title: BD Software Companies
+layout: default
+---
+<style>
+.article > .complete-wrap, .article > .pager { display:none !important; }
+.bd-tools{position:sticky;top:58px;background:var(--bg);padding:12px 0 10px;z-index:5;border-bottom:1px solid var(--border);margin-bottom:8px}
+.bd-search{width:100%;padding:11px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--bg-soft);color:var(--text);font-size:1rem;outline:none}
+.bd-search:focus{border-color:var(--accent)}
+.bd-count{font-size:.88rem;color:var(--text-soft);margin:8px 2px 0}
+#bdt{width:100%;border-collapse:collapse;display:table}
+#bdt th,#bdt td{border:1px solid var(--border);padding:8px 11px;text-align:left;vertical-align:top;font-size:.9rem}
+#bdt th{background:var(--bg-soft);position:sticky;top:112px;z-index:4}
+#bdt td.num{color:var(--text-soft);text-align:right;width:44px}
+#bdt tr:nth-child(even) td{background:var(--bg-soft)}
+#bdt .co{font-weight:700}
+#bdt .tech{color:var(--text-soft);font-size:.84rem}
+.bd-wrap{overflow-x:auto}
+@media (max-width:760px){ #bdt{min-width:720px} .bd-search{font-size:16px} }
+</style>
+
+<h1>🇧🇩 Software & Tech Companies in Bangladesh</h1>
+<p class="dash-sub" style="color:var(--text-soft)">A searchable directory of <strong>{{ site.data.bd_companies.count }} software/tech companies in Bangladesh</strong> — great for job-hunting QA & developers. Search by company, tech stack, or location. Data from the community-maintained <a href="https://github.com/MBSTUPC/tech-companies-in-bangladesh" target="_blank" rel="noopener">MBSTUPC/tech-companies-in-bangladesh</a> list (see also this <a href="https://www.linkedin.com/pulse/100-bangladeshi-software-companies-profile-sagore-sarker/" target="_blank" rel="noopener">100 BD companies profile</a>). Last synced: <strong>{{ site.data.bd_companies.parsed }}</strong>.</p>
+
+<blockquote>💡 <strong>QA job tip:</strong> filter by a stack you're learning (e.g. type <code>laravel</code>, <code>react</code>, or <code>python</code>) to find companies to target, then tailor your <a href="07-career-journey.html">portfolio</a> and <a href="08-interview-prep.html">interview prep</a> to them.</blockquote>
+
+<div class="bd-tools">
+  <input id="bdSearch" class="bd-search" type="search" placeholder="Search {{ site.data.bd_companies.count }} companies — name, technology, or location…" aria-label="Search companies">
+  <p class="bd-count" id="bdCount"></p>
+</div>
+
+<div class="bd-wrap">
+<table id="bdt">
+  <thead><tr><th class="num">#</th><th>Company</th><th>Location</th><th>Tech stack</th><th>Engineers</th><th>Site</th></tr></thead>
+  <tbody>
+  {% for c in site.data.bd_companies.companies %}
+    <tr data-s="{{ c.name | downcase }} {{ c.tech | downcase }} {{ c.loc | downcase }}">
+      <td class="num">{{ forloop.index }}</td>
+      <td class="co">{{ c.name }}</td>
+      <td>{{ c.loc }}</td>
+      <td class="tech">{{ c.tech }}</td>
+      <td>{% if c.eng != "Please update" and c.eng != "" %}{{ c.eng }}{% else %}—{% endif %}</td>
+      <td>{% if c.url != "" %}<a href="{{ c.url }}" target="_blank" rel="noopener">Visit ↗</a>{% else %}—{% endif %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<p style="font-size:.82rem;color:var(--text-soft);margin-top:16px">Listing is community-sourced and may be incomplete or out of date for any single company — verify details on the company's own site before applying. To add or fix a company, open a PR on the <a href="https://github.com/MBSTUPC/tech-companies-in-bangladesh" target="_blank" rel="noopener">source repo</a>; this page re-syncs monthly. <a href="{{ "/" | relative_url }}">← Back to the roadmap</a></p>
+
+<script>
+(function(){
+  var q=document.getElementById('bdSearch'), rows=[].slice.call(document.querySelectorAll('#bdt tbody tr')), count=document.getElementById('bdCount');
+  function upd(){
+    var v=q.value.trim().toLowerCase(), shown=0;
+    rows.forEach(function(r){
+      var on = !v || r.getAttribute('data-s').indexOf(v)>-1;
+      r.style.display = on?'':'none'; if(on)shown++;
+    });
+    count.textContent='Showing '+shown+' of '+rows.length+' companies';
+  }
+  q.addEventListener('input',upd); upd();
+})();
+</script>

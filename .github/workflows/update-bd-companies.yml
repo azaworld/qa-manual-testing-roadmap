@@ -1,0 +1,42 @@
+name: Update BD software companies
+
+# Re-syncs _data/bd_companies.yml from the community source
+# (MBSTUPC/tech-companies-in-bangladesh). Monthly + on demand. Commits only on change.
+
+on:
+  schedule:
+    - cron: "0 7 1 * *"   # 1st of each month, 07:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: Fetch upstream list and re-parse
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh api repos/MBSTUPC/tech-companies-in-bangladesh/readme -q '.content' | base64 -d > bd.adoc
+          python3 scripts/parse_bd_companies.py bd.adoc _data/bd_companies.yml
+          rm -f bd.adoc
+          echo "----- head -----"; head -6 _data/bd_companies.yml
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- _data/bd_companies.yml; then
+            echo "No changes."
+          else
+            git config user.name "qa-roadmap-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add _data/bd_companies.yml
+            git commit -m "chore: refresh BD software companies list [skip ci]"
+            git push
+          fi

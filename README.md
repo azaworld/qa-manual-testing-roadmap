@@ -71,6 +71,8 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 
 **📚 Reference & interview prep:** [🤖 AI Tools Directory (auto-updated)](23-ai-tools.md) · [Interview Bank (Top 100+ Q&A)](19-interview-bank.md) · [Cheatsheets](20-cheatsheets.md) · [🎬 Teaching Kit — live demo sites](21-teaching-kit.md) (screen-share these to teach any section, no slides)
 
+**🇧🇩 Job hunting in Bangladesh?** Browse the searchable [directory of 235+ BD software companies](25-bd-companies.md) — filter by tech stack or location to find where to apply.
+
 **🎓 Guided courses:** prefer video + a certificate? Take these as courses on **[AZADEMY](https://azademy.vercel.app/)** — the roadmap is the free textbook, the academy is the classroom.
 
 ---
