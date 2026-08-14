@@ -33,6 +33,10 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .topnav a:hover{color:#22d3ee}
 #theme-btn{background:none;border:1px solid #3b4368;color:#c7cfe8;border-radius:8px;padding:4px 10px;cursor:pointer;font-size:.9rem}
 #menu-btn{display:none;background:none;border:1px solid #3b4368;color:#c7cfe8;border-radius:8px;padding:4px 10px;cursor:pointer;font-size:1rem}
+/* xp widget */
+.xp{display:flex;align-items:center;gap:6px;background:rgba(124,58,237,.22);border:1px solid #3b4368;color:#e6eaf6 !important;border-radius:999px;padding:4px 11px;font-size:.82rem;font-weight:600;white-space:nowrap}
+.xp:hover{border-color:#a78bfa}
+.xp .xp-count{color:#a5b0d0;font-weight:500}
 /* layout */
 .wrap{display:flex;padding-top:58px;min-height:100vh}
 .sidebar{position:fixed;top:58px;bottom:0;left:0;width:292px;background:var(--side-bg);overflow-y:auto;padding:14px 0 30px;z-index:40}
@@ -43,6 +47,8 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .navlink{display:block;padding:7px 18px 7px 26px;color:var(--side-text);text-decoration:none;font-size:.9rem;border-left:3px solid transparent}
 .navlink:hover{background:rgba(34,211,238,.08);color:#fff}
 .navlink.active{color:var(--side-active);border-left-color:var(--side-active);background:rgba(34,211,238,.1);font-weight:600}
+.navlink.done{color:#9ff0be}
+.nav-check{float:right;color:#22c55e;font-weight:700;margin-right:12px}
 .content{margin-left:292px;flex:1;min-width:0;display:flex;justify-content:center}
 .article{width:100%;max-width:920px;padding:34px 44px 70px}
 /* breadcrumb */
@@ -67,7 +73,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .article hr{border:none;border-top:1px solid var(--border);margin:2.4em 0}
 .article li{margin:.3em 0}
 /* prev/next */
-.pager{display:flex;gap:14px;margin-top:54px}
+.pager{display:flex;gap:14px;margin-top:40px}
 .pager a{flex:1;border:1.5px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--text);box-shadow:var(--shadow)}
 .pager a:hover{border-color:var(--accent)}
 .pager .dir{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-soft);margin-bottom:4px}
@@ -78,6 +84,33 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 .foot a{color:var(--accent);text-decoration:none}
 /* drawer overlay */
 .nav-overlay{position:fixed;inset:58px 0 0 0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:39}
+/* ---------- gamification: chooser + cards + complete + toast ---------- */
+.chooser{margin:4px 0 30px}
+.chooser-head h2{margin:.1em 0 .15em;font-size:1.55rem;border:none;padding:0}
+.chooser-head p{margin:.2em 0 1.15em;color:var(--text-soft);font-size:.95rem}
+.reset-link{background:none;border:none;color:var(--accent);cursor:pointer;font-size:.85rem;text-decoration:underline;padding:0}
+.track-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:16px}
+.track-card{position:relative;display:block;border:1.5px solid var(--border);border-top:4px solid var(--c);border-radius:14px;padding:15px 16px 13px;text-decoration:none;color:var(--text);background:var(--bg);box-shadow:var(--shadow);transition:transform .15s,border-color .15s,box-shadow .15s;overflow:hidden}
+.track-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(16,24,40,.16);border-color:var(--c)}
+.track-card:hover .track-cta{margin-left:3px}
+.track-icon{font-size:1.85rem;line-height:1}
+.track-title{font-weight:800;font-size:1.06rem;margin:8px 0 4px}
+.track-blurb{font-size:.855rem;color:var(--text-soft);line-height:1.45;min-height:3.6em}
+.track-bar{height:7px;border-radius:99px;background:var(--bg-soft);margin:12px 0 8px;overflow:hidden}
+.track-bar span{display:block;height:100%;width:0;border-radius:99px;background:var(--c);transition:width .55s ease}
+.track-meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
+.track-prog{color:var(--text-soft);font-weight:600}
+.track-cta{color:var(--c);font-weight:700;transition:margin .15s}
+.track-badge{position:absolute;top:9px;right:11px;font-size:1.25rem;opacity:0;transform:scale(.3) rotate(-25deg);transition:.35s}
+.track-card.done .track-badge{opacity:1;transform:scale(1) rotate(0)}
+.track-card.done .track-cta{color:#22c55e}
+.complete-wrap{margin-top:42px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.complete-btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-size:.95rem;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+.complete-btn:hover{filter:brightness(1.08)}
+.complete-btn.is-done{background:#22c55e}
+.complete-note{font-size:.85rem;color:var(--text-soft)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(30px);background:#0d1130;color:#fff;border:1px solid #3b4368;border-left:4px solid #22d3ee;border-radius:12px;padding:12px 18px;font-size:.92rem;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.35s;z-index:70;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 /* tablet & below: sidebar becomes a drawer */
 @media (max-width:1020px){
   .sidebar{width:min(300px,82vw);transform:translateX(-100%);transition:transform .25s ease}
@@ -95,9 +128,10 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
   body{font-size:16px}
   .topbar{gap:9px;padding:0 12px}
   .brand{font-size:.98rem}
-  .brand-mid{display:none}           /* "🧪 QA Roadmap" on phones so the theme toggle always fits */
-  .topnav{gap:10px;flex-shrink:0}
-  .topnav a{display:none}            /* azantor.xyz + GitHub live in the page footer too */
+  .topnav{gap:9px;flex-shrink:0}
+  .topnav>a[href^="https"]{display:none}   /* azantor.xyz + GitHub live in the footer too */
+  .xp{padding:4px 9px}
+  .xp .xp-count{display:none}
   #theme-btn{flex-shrink:0}
   .article{padding:22px 16px 54px}
   .article h1{font-size:1.62rem}
@@ -105,16 +139,20 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
   .article h3{font-size:1.08rem}
   .article th,.article td{padding:8px 10px;font-size:.9rem}
   .crumb{font-size:.78rem}
+  .track-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .track-blurb{min-height:0;font-size:.8rem}
 }
+@media (max-width:400px){ .track-grid{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
 <div id="progress"></div>
 <header class="topbar">
   <button id="menu-btn" aria-label="Toggle navigation">☰</button>
-  <a class="brand" href="{{ '/' | relative_url }}">🧪 QA <span class="brand-mid">Manual Testing </span><span>Roadmap</span></a>
-  <span class="tagline">an open curriculum by Arifuzzaman Antor</span>
+  <a class="brand" href="{{ '/' | relative_url }}">🧪 QA <span>Roadmap</span></a>
+  <span class="tagline">Manual · Automation · AI — an open curriculum by Arifuzzaman Antor</span>
   <nav class="topnav">
+    <a class="xp" id="xp" href="{{ '/' | relative_url }}#choose" title="Your progress — tap for tracks">⭐ <b class="xp-lvl">Lv 1</b><span class="xp-count">0/0</span></a>
     <a href="https://azantor.xyz" target="_blank" rel="noopener">azantor.xyz</a>
     <a href="https://github.com/azaworld/qa-manual-testing-roadmap" target="_blank" rel="noopener">⭐ GitHub</a>
     <button id="theme-btn" aria-label="Toggle theme">🌙</button>
@@ -144,7 +182,16 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
       <nav class="crumb"><a href="{{ '/' | relative_url }}">Home</a> › {% for item in all_items %}{% if item.url == page.url %}{{ item.title }}{% endif %}{% endfor %}</nav>
       {% endif %}
 
+      {% if page.url == "/" %}{% include chooser.html %}{% endif %}
+
       {{ content }}
+
+      {% if page.url != "/" %}
+      <div class="complete-wrap">
+        <button class="complete-btn" id="complete-btn" type="button">Mark this lesson complete ✓</button>
+        <span class="complete-note" id="complete-note"></span>
+      </div>
+      {% endif %}
 
       {% if cur_idx >= 0 %}
       {% assign prev_idx = cur_idx | minus: 1 %}
@@ -199,6 +246,99 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
       while(el&&el.classList.contains('navlink')){if(el.style.display!=='none')any=true;el=el.nextElementSibling;}
       g.style.display=any?'':'none';
     });
+  });
+
+  /* ---------------- gamification engine ---------------- */
+  var KEY='qa-progress-v1';
+  var homePath=document.querySelector('.brand').pathname;              // e.g. /qa-manual-testing-roadmap/
+  var navLinks=[].slice.call(document.querySelectorAll('.sidebar .navlink'));
+  // completable lessons = every sidebar link except Home
+  var LESSONS=navLinks.map(function(a){return a.pathname;}).filter(function(p){return p!==homePath;});
+  var TOTAL=LESSONS.length;
+  var LEVELS=[
+    {min:0,name:'Rookie'},{min:1,name:'Explorer'},{min:3,name:'Analyst'},
+    {min:6,name:'Tester'},{min:10,name:'Senior Tester'},{min:15,name:'QA Lead'},{min:20,name:'QA Master'}
+  ];
+  function getDone(){try{return JSON.parse(localStorage.getItem(KEY))||[];}catch(e){return [];}}
+  function setDone(a){localStorage.setItem(KEY,JSON.stringify(a));}
+  function levelFor(n){var i=0;for(var k=0;k<LEVELS.length;k++){if(n>=LEVELS[k].min)i=k;}return i;}
+
+  var toastEl=document.createElement('div'); toastEl.className='toast'; document.body.appendChild(toastEl);
+  var toastT;
+  function toast(msg){toastEl.textContent=msg;toastEl.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('show');},2600);}
+
+  var trackWasDone={};
+  function render(){
+    var done=getDone();
+    var doneSet={}; done.forEach(function(p){doneSet[p]=1;});
+    var count=LESSONS.filter(function(p){return doneSet[p];}).length;
+
+    // header XP
+    var li=levelFor(count);
+    var lvlEl=document.querySelector('.xp-lvl'), cntEl=document.querySelector('.xp-count');
+    if(lvlEl)lvlEl.textContent='Lv '+(li+1);
+    if(cntEl)cntEl.textContent=count+'/'+TOTAL;
+    var xpEl=document.getElementById('xp'); if(xpEl)xpEl.title='Level '+(li+1)+' · '+LEVELS[li].name+' — '+count+'/'+TOTAL+' lessons done';
+
+    // sidebar checks
+    navLinks.forEach(function(a){
+      var on=!!doneSet[a.pathname];
+      a.classList.toggle('done',on);
+      var chk=a.querySelector('.nav-check');
+      if(on&&!chk){var s=document.createElement('span');s.className='nav-check';s.textContent='✓';a.appendChild(s);}
+      if(!on&&chk)chk.remove();
+    });
+
+    // track cards
+    document.querySelectorAll('.track-card').forEach(function(card){
+      var urls=(card.getAttribute('data-lessons')||'').split(',').filter(Boolean);
+      var d=urls.filter(function(u){var path=new URL(u,location.origin).pathname;return doneSet[path];}).length;
+      var t=urls.length, pct=t?Math.round(d/t*100):0;
+      var span=card.querySelector('.track-bar span'); if(span)span.style.width=pct+'%';
+      var prog=card.querySelector('.track-prog'); if(prog)prog.textContent=d+' / '+t;
+      var full=(t>0&&d===t);
+      card.classList.toggle('done',full);
+      var cta=card.querySelector('.track-cta');
+      if(cta)cta.textContent=full?'Done 🎉':(d>0?'Continue →':'Start →');
+      var key=card.getAttribute('data-track');
+      if(full&&trackWasDone[key]===false){toast('🏅 Track complete: '+card.querySelector('.track-title').textContent+'!');}
+      trackWasDone[key]=full;
+    });
+    return count;
+  }
+
+  // seed trackWasDone as booleans on first paint (so completion toasts only fire on real transitions)
+  document.querySelectorAll('.track-card').forEach(function(card){trackWasDone[card.getAttribute('data-track')]=null;});
+  var prevCount=render();
+
+  // mark-complete button
+  var cbtn=document.getElementById('complete-btn'), cnote=document.getElementById('complete-note');
+  function syncBtn(){
+    if(!cbtn)return;
+    var done=getDone(), here=location.pathname, on=done.indexOf(here)>-1;
+    cbtn.classList.toggle('is-done',on);
+    cbtn.textContent=on?'Completed ✓ — click to undo':'Mark this lesson complete ✓';
+    if(cnote)cnote.textContent=on?'Nice. It counts toward your tracks.':'';
+  }
+  if(cbtn){
+    syncBtn();
+    cbtn.addEventListener('click',function(){
+      var done=getDone(), here=location.pathname, i=done.indexOf(here);
+      if(i>-1)done.splice(i,1); else done.push(here);
+      setDone(done);
+      var before=prevCount, after=render(); syncBtn();
+      var lb=levelFor(before), la=levelFor(after);
+      if(i===-1){ // just completed
+        if(la>lb)toast('🎉 Level up! You’re now Lv '+(la+1)+' — '+LEVELS[la].name);
+        else toast('✓ Lesson complete! '+after+'/'+TOTAL+' — +100 XP');
+      }
+      prevCount=after;
+    });
+  }
+
+  var reset=document.getElementById('reset-progress');
+  if(reset)reset.addEventListener('click',function(){
+    if(confirm('Reset all lesson progress in this browser?')){setDone([]);prevCount=render();syncBtn();toast('Progress reset.');}
   });
 })();
 </script>

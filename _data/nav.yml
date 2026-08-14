@@ -2,6 +2,8 @@
   items:
     - title: "The Roadmap — Start Here"
       url: "/"
+    - title: "🎮 The Playground (practice)"
+      url: "/17-playground.html"
 
 - title: "🟢 Basic"
   items:

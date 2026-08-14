@@ -1,0 +1,73 @@
+# Category cards for the "Choose your path" chooser on the home page.
+# Each track: icon, title, blurb, color, start URL, and the lessons that count toward its progress.
+- key: beginner
+  icon: "🌱"
+  title: "Start from Zero"
+  blurb: "New to tech? The complete beginner path — foundations to your first real tests."
+  color: "#22c55e"
+  start: "/01-foundations.html"
+  lessons: ["/01-foundations.html","/02-test-design-techniques.html","/03-test-artifacts.html","/04-types-of-testing.html","/05-agile-and-process.html","/06-tools.html"]
+
+- key: manual
+  icon: "🧭"
+  title: "Manual Testing"
+  blurb: "The craft: test design, artifacts, testing types, agile process, tools & soft skills."
+  color: "#22d3ee"
+  start: "/01-foundations.html"
+  lessons: ["/01-foundations.html","/02-test-design-techniques.html","/03-test-artifacts.html","/04-types-of-testing.html","/05-agile-and-process.html","/06-tools.html","/10-soft-skills.html"]
+
+- key: automation
+  icon: "🤖"
+  title: "Automation"
+  blurb: "When to automate + how: Playwright/Selenium, the pyramid, POM, CI/CD, frameworks."
+  color: "#60a5fa"
+  start: "/09-path-to-automation.html"
+  lessons: ["/09-path-to-automation.html","/15-automation-deep-dive.html"]
+
+- key: ai
+  icon: "🧠"
+  title: "AI × QA"
+  blurb: "Use AI on every task, drive browsers with MCP + Playwright agents, test AI systems."
+  color: "#a78bfa"
+  start: "/12-ai-for-qa.html"
+  lessons: ["/12-ai-for-qa.html"]
+
+- key: api
+  icon: "🔌"
+  title: "API Testing"
+  blurb: "HTTP, negatives, auth, contract testing, GraphQL, Postman → Newman automation."
+  color: "#2dd4bf"
+  start: "/13-api-testing-deep-dive.html"
+  lessons: ["/13-api-testing-deep-dive.html"]
+
+- key: performance
+  icon: "⚡"
+  title: "Performance"
+  blurb: "Load, stress, spike & soak with k6/JMeter — percentiles, methodology, bottlenecks."
+  color: "#eab308"
+  start: "/16-performance-testing.html"
+  lessons: ["/16-performance-testing.html"]
+
+- key: security
+  icon: "🔐"
+  title: "Security"
+  blurb: "OWASP Top 10 for QA — IDOR, XSS, injection — with ZAP/Burp, ethically."
+  color: "#ef4444"
+  start: "/14-security-testing.html"
+  lessons: ["/14-security-testing.html"]
+
+- key: career
+  icon: "💼"
+  title: "Career & Interviews"
+  blurb: "Junior → Lead ladder, portfolio building, and interview questions with model answers."
+  color: "#f472b6"
+  start: "/07-career-journey.html"
+  lessons: ["/07-career-journey.html","/08-interview-prep.html","/11-resources.html"]
+
+- key: playground
+  icon: "🎮"
+  title: "The Playground"
+  blurb: "Practice on real apps — gamified missions for manual, API, security & performance."
+  color: "#f59e0b"
+  start: "/17-playground.html"
+  lessons: ["/17-playground.html"]

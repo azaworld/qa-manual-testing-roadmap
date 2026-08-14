@@ -1,10 +1,10 @@
-<img src="assets/roadmap-hero.svg" alt="QA Manual Testing — the complete career roadmap: basic → intermediate → advanced" width="100%" />
+<img src="assets/roadmap-hero.svg" alt="QA Roadmap — Manual, Automation, AI, API, Performance & Security: zero to QA Lead, gamified" width="100%" />
 
-# 🧪 QA Manual Testing — The Complete Career Roadmap
+# 🧪 QA Roadmap — Manual · Automation · AI
 
-**From zero to QA Lead — everything you need to learn, in the order you need to learn it, with real examples for every step.**
+**From zero to QA Lead — the complete QA curriculum, in the order you need to learn it, with real-world examples at every step.** Covers **Manual, Automation, AI × QA, API, Performance & Security** — choose your path and level up.
 
-🌐 **Read it as a website:** [azaworld.github.io/qa-manual-testing-roadmap](https://azaworld.github.io/qa-manual-testing-roadmap/)
+🌐 **Play it as a gamified website:** [azaworld.github.io/qa-manual-testing-roadmap](https://azaworld.github.io/qa-manual-testing-roadmap/) — pick a track, mark lessons complete, earn XP, levels & badges (saved in your browser), and practice on real apps in [The Playground](17-playground.md).
 
 <p>
   <a href="https://azantor.xyz"><img src="https://img.shields.io/badge/by-Arifuzzaman%20Antor-7c3aed?style=flat-square" /></a>

@@ -9,8 +9,8 @@
   </defs>
   <rect width="1200" height="320" fill="url(#bg)"/>
 
-  <text x="600" y="78" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="800" fill="#f1f5f9">🧪 QA Manual Testing <tspan fill="#22d3ee">Career Roadmap</tspan></text>
-  <text x="600" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" fill="#93a0c2">Zero → QA Lead · concepts → techniques → career, with real examples at every step</text>
+  <text x="600" y="78" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="42" font-weight="800" fill="#f1f5f9">🧪 QA <tspan fill="#22d3ee">Roadmap</tspan></text>
+  <text x="600" y="112" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18.5" fill="#93a0c2">Manual · Automation · AI · API · Performance · Security — zero to QA Lead, gamified</text>
 
   <!-- journey path (visible; dash flow loops) -->
   <path d="M 120 225 C 350 165, 500 285, 700 215 S 1000 165, 1080 205" fill="none" stroke="url(#path)" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 10">

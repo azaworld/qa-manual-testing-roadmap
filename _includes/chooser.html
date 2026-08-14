@@ -1,0 +1,19 @@
+<section class="chooser" id="choose">
+  <div class="chooser-head">
+    <h2>🎮 Choose your path</h2>
+    <p>Pick a track and start leveling up. Mark lessons complete as you go — your XP, levels and badges save automatically in this browser. <button id="reset-progress" class="reset-link" type="button">↺ reset progress</button></p>
+  </div>
+  <div class="track-grid">
+    {% for t in site.data.tracks %}
+    <a class="track-card" style="--c:{{ t.color }}" href="{{ t.start | relative_url }}" data-track="{{ t.key }}"
+       data-lessons="{% for l in t.lessons %}{{ l | relative_url }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+      <div class="track-badge" aria-hidden="true">🏅</div>
+      <div class="track-icon">{{ t.icon }}</div>
+      <div class="track-title">{{ t.title }}</div>
+      <div class="track-blurb">{{ t.blurb }}</div>
+      <div class="track-bar"><span></span></div>
+      <div class="track-meta"><span class="track-prog">0 / {{ t.lessons | size }}</span><span class="track-cta">Start →</span></div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
