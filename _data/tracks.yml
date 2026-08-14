@@ -72,6 +72,14 @@
   start: "/07-career-journey.html"
   lessons: ["/07-career-journey.html","/08-interview-prep.html","/11-resources.html"]
 
+- key: interview
+  icon: "💬"
+  title: "Ace the Interview"
+  blurb: "Top 100+ questions with model answers + a mock-interview drill. Walk in ready."
+  color: "#38bdf8"
+  start: "/19-interview-bank.html"
+  lessons: ["/08-interview-prep.html","/19-interview-bank.html"]
+
 - key: playground
   icon: "🎮"
   title: "The Playground"

@@ -65,6 +65,8 @@ Follow the stages in order — **🟢 Basic → 🟡 Intermediate → 🔴 Advan
 
 **Worked examples:** [E-commerce checkout test cases](examples/ecommerce-checkout-test-cases.md) · [Real bug report](examples/sample-bug-report.md)
 
+**📚 Reference & interview prep:** [Interview Bank (Top 100+ Q&A)](19-interview-bank.md) · [Cheatsheets](20-cheatsheets.md) · [🎬 Teaching Kit — live demo sites](21-teaching-kit.md) (screen-share these to teach any section, no slides)
+
 **🎓 Guided courses:** prefer video + a certificate? Take these as courses on **[AZADEMY](https://azademy.vercel.app/)** — the roadmap is the free textbook, the academy is the classroom.
 
 ---

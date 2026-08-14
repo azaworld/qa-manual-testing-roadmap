@@ -53,6 +53,15 @@
     - title: "Stage 15 · Performance Testing"
       url: "/16-performance-testing.html"
 
+- title: "📚 Reference & Interview"
+  items:
+    - title: "💬 Interview Bank (Top 100+)"
+      url: "/19-interview-bank.html"
+    - title: "📌 Cheatsheets"
+      url: "/20-cheatsheets.html"
+    - title: "🎬 Teaching Kit (live demo sites)"
+      url: "/21-teaching-kit.html"
+
 - title: "📄 Templates"
   items:
     - title: "Test Plan Template"
