@@ -94,9 +94,11 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 @media (max-width:600px){
   body{font-size:16px}
   .topbar{gap:9px;padding:0 12px}
-  .brand{font-size:.92rem}
-  .topnav{gap:10px}
+  .brand{font-size:.98rem}
+  .brand-mid{display:none}           /* "🧪 QA Roadmap" on phones so the theme toggle always fits */
+  .topnav{gap:10px;flex-shrink:0}
   .topnav a{display:none}            /* azantor.xyz + GitHub live in the page footer too */
+  #theme-btn{flex-shrink:0}
   .article{padding:22px 16px 54px}
   .article h1{font-size:1.62rem}
   .article h2{font-size:1.24rem}
@@ -110,7 +112,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Hel
 <div id="progress"></div>
 <header class="topbar">
   <button id="menu-btn" aria-label="Toggle navigation">☰</button>
-  <a class="brand" href="{{ '/' | relative_url }}">🧪 QA Manual Testing <span>Roadmap</span></a>
+  <a class="brand" href="{{ '/' | relative_url }}">🧪 QA <span class="brand-mid">Manual Testing </span><span>Roadmap</span></a>
   <span class="tagline">an open curriculum by Arifuzzaman Antor</span>
   <nav class="topnav">
     <a href="https://azantor.xyz" target="_blank" rel="noopener">azantor.xyz</a>
