@@ -4,25 +4,53 @@ layout: default
 ---
 <style>
 .article > .complete-wrap, .article > .pager { display:none !important; }
+/* salary */
+.sal{width:100%;border-collapse:collapse;margin:8px 0 6px}
+.sal th,.sal td{border:1px solid var(--border);padding:8px 11px;text-align:left;font-size:.9rem}
+.sal th{background:var(--bg-soft)}
+.sal .pay{font-weight:700;color:var(--accent);white-space:nowrap}
+/* directory */
 .bd-tools{position:sticky;top:58px;background:var(--bg);padding:12px 0 10px;z-index:5;border-bottom:1px solid var(--border);margin-bottom:8px}
 .bd-search{width:100%;padding:11px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--bg-soft);color:var(--text);font-size:1rem;outline:none}
 .bd-search:focus{border-color:var(--accent)}
 .bd-count{font-size:.88rem;color:var(--text-soft);margin:8px 2px 0}
+.bd-wrap{overflow-x:auto}
 #bdt{width:100%;border-collapse:collapse;display:table}
 #bdt th,#bdt td{border:1px solid var(--border);padding:8px 11px;text-align:left;vertical-align:top;font-size:.9rem}
-#bdt th{background:var(--bg-soft);position:sticky;top:112px;z-index:4}
-#bdt td.num{color:var(--text-soft);text-align:right;width:44px}
+#bdt th{background:var(--bg-soft);position:sticky;top:112px;z-index:4;cursor:pointer;user-select:none;white-space:nowrap}
+#bdt th[data-sort]:hover{color:var(--accent)}
+#bdt th .arw{opacity:.5;font-size:.8em}
+#bdt td.num{color:var(--text-soft);text-align:right;width:40px}
+#bdt td.size{text-align:center;font-weight:600}
 #bdt tr:nth-child(even) td{background:var(--bg-soft)}
 #bdt .co{font-weight:700}
-#bdt .tech{color:var(--text-soft);font-size:.84rem}
-.bd-wrap{overflow-x:auto}
-@media (max-width:760px){ #bdt{min-width:720px} .bd-search{font-size:16px} }
+#bdt .tech{color:var(--text-soft);font-size:.82rem}
+#bdt .site a{font-size:.85rem}
+@media (max-width:760px){ #bdt{min-width:780px} .bd-search{font-size:16px} }
 </style>
 
 <h1>🇧🇩 Software & Tech Companies in Bangladesh</h1>
-<p class="dash-sub" style="color:var(--text-soft)">A searchable directory of <strong>{{ site.data.bd_companies.count }} software/tech companies in Bangladesh</strong> — great for job-hunting QA & developers. Search by company, tech stack, or location. Data from the community-maintained <a href="https://github.com/MBSTUPC/tech-companies-in-bangladesh" target="_blank" rel="noopener">MBSTUPC/tech-companies-in-bangladesh</a> list (see also this <a href="https://www.linkedin.com/pulse/100-bangladeshi-software-companies-profile-sagore-sarker/" target="_blank" rel="noopener">100 BD companies profile</a>). Last synced: <strong>{{ site.data.bd_companies.parsed }}</strong>.</p>
+<p style="color:var(--text-soft)">A searchable, sortable directory of <strong>{{ site.data.bd_companies.count }} software/tech companies in Bangladesh</strong> — with their <strong>websites</strong> and (where known) <strong>team size</strong>. Built for job-hunting QA & developers. Data from the community-maintained <a href="https://github.com/MBSTUPC/tech-companies-in-bangladesh" target="_blank" rel="noopener">MBSTUPC list</a>; re-synced monthly. Last synced: <strong>{{ site.data.bd_companies.parsed }}</strong>.</p>
 
-<blockquote>💡 <strong>QA job tip:</strong> filter by a stack you're learning (e.g. type <code>laravel</code>, <code>react</code>, or <code>python</code>) to find companies to target, then tailor your <a href="07-career-journey.html">portfolio</a> and <a href="08-interview-prep.html">interview prep</a> to them.</blockquote>
+<h2>💰 QA salary structure in Bangladesh (2026, approximate)</h2>
+<p style="color:var(--text-soft);font-size:.92rem">Monthly gross, in BDT. Real pay varies a lot by <strong>skill (automation/SDET pays more), employer (MNC vs local), and city</strong>. Treat these as market bands, not guarantees — verify on <a href="https://www.glassdoor.com/Salaries/dhaka-software-qa-engineer-salary-SRCH_IL.0,5_IS3812_KO6,25.htm" target="_blank" rel="noopener">Glassdoor</a> / <a href="https://roadtocareer.net/jobs" target="_blank" rel="noopener">local job boards</a>.</p>
+<div class="bd-wrap">
+<table class="sal">
+  <thead><tr><th>Level</th><th>Experience</th><th>Typical monthly (BDT)</th><th>What raises it</th></tr></thead>
+  <tbody>
+    <tr><td>Intern / Trainee QA</td><td>0–1 yr</td><td class="pay">৳8k – 20k</td><td>A portfolio + basic automation</td></tr>
+    <tr><td>Junior QA</td><td>0–2 yr</td><td class="pay">৳25k – 45k</td><td>API testing, SQL, one automation tool</td></tr>
+    <tr><td>Mid QA</td><td>2–4 yr</td><td class="pay">৳45k – 90k</td><td>Solid automation (Playwright/Selenium), CI</td></tr>
+    <tr><td>Senior QA / SDET</td><td>4–7 yr</td><td class="pay">৳90k – 180k</td><td>Framework ownership, performance/security, leadership</td></tr>
+    <tr><td>QA Lead / Manager</td><td>7 yr+</td><td class="pay">৳150k – 300k+</td><td>Team + strategy; MNC or product company</td></tr>
+    <tr><td>Remote / foreign clients</td><td>skilled, any level</td><td class="pay">৳200k – 500k+ equiv</td><td>Upwork Top Rated, US/EU clients, AI/SDET skills</td></tr>
+  </tbody>
+</table>
+</div>
+<blockquote style="font-size:.86rem">📈 <strong>The lever:</strong> automation + API + AI skills roughly double QA pay vs manual-only at every level — exactly the path this roadmap builds. See <a href="24-tech-foundations.html">Tech Foundations</a> and the <a href="18-capstone-sr-qa.html">Sr. QA capstone</a>.</blockquote>
+
+<h2>🏢 The company directory</h2>
+<blockquote style="font-size:.88rem">🔎 <strong>How it's ranked:</strong> default order is by <strong>known team size</strong> (largest first) — an <em>objective</em> proxy for scale &amp; hiring volume, since the source has no quality ratings. <strong>Click any column header to re-sort.</strong> "Best" is subjective — check <a href="https://www.glassdoor.com/" target="_blank" rel="noopener">Glassdoor</a> reviews before applying. Filter by a stack you're learning (e.g. <code>laravel</code>, <code>react</code>, <code>python</code>) to find targets.</blockquote>
 
 <div class="bd-tools">
   <input id="bdSearch" class="bd-search" type="search" placeholder="Search {{ site.data.bd_companies.count }} companies — name, technology, or location…" aria-label="Search companies">
@@ -31,35 +59,64 @@ layout: default
 
 <div class="bd-wrap">
 <table id="bdt">
-  <thead><tr><th class="num">#</th><th>Company</th><th>Location</th><th>Tech stack</th><th>Engineers</th><th>Site</th></tr></thead>
+  <thead><tr>
+    <th class="num">#</th>
+    <th data-sort="name">Company <span class="arw"></span></th>
+    <th>Location</th>
+    <th>Tech stack</th>
+    <th data-sort="eng">Team size <span class="arw">▾</span></th>
+    <th>Website</th>
+  </tr></thead>
   <tbody>
-  {% for c in site.data.bd_companies.companies %}
-    <tr data-s="{{ c.name | downcase }} {{ c.tech | downcase }} {{ c.loc | downcase }}">
-      <td class="num">{{ forloop.index }}</td>
+  {% assign rows = site.data.bd_companies.companies | sort: 'engnum' | reverse %}
+  {% for c in rows %}
+    {% assign dom = c.url | remove: 'https://' | remove: 'http://' | remove: 'www.' | split: '/' | first %}
+    <tr data-name="{{ c.name | downcase }}" data-eng="{{ c.engnum }}" data-s="{{ c.name | downcase }} {{ c.tech | downcase }} {{ c.loc | downcase }}">
+      <td class="num"></td>
       <td class="co">{{ c.name }}</td>
       <td>{{ c.loc }}</td>
       <td class="tech">{{ c.tech }}</td>
-      <td>{% if c.eng != "Please update" and c.eng != "" %}{{ c.eng }}{% else %}—{% endif %}</td>
-      <td>{% if c.url != "" %}<a href="{{ c.url }}" target="_blank" rel="noopener">Visit ↗</a>{% else %}—{% endif %}</td>
+      <td class="size">{% if c.engnum > 0 %}{{ c.eng }}{% else %}—{% endif %}</td>
+      <td class="site">{% if c.url != "" %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ dom }} ↗</a>{% else %}—{% endif %}</td>
     </tr>
   {% endfor %}
   </tbody>
 </table>
 </div>
 
-<p style="font-size:.82rem;color:var(--text-soft);margin-top:16px">Listing is community-sourced and may be incomplete or out of date for any single company — verify details on the company's own site before applying. To add or fix a company, open a PR on the <a href="https://github.com/MBSTUPC/tech-companies-in-bangladesh" target="_blank" rel="noopener">source repo</a>; this page re-syncs monthly. <a href="{{ "/" | relative_url }}">← Back to the roadmap</a></p>
+<p style="font-size:.82rem;color:var(--text-soft);margin-top:16px">Community-sourced; team size is self-reported and blank ("—") for most. Verify details on the company's own site before applying. Add or fix a company via a PR on the <a href="https://github.com/MBSTUPC/tech-companies-in-bangladesh" target="_blank" rel="noopener">source repo</a> — this page re-syncs monthly. <a href="{{ "/" | relative_url }}">← Back to the roadmap</a></p>
 
 <script>
 (function(){
-  var q=document.getElementById('bdSearch'), rows=[].slice.call(document.querySelectorAll('#bdt tbody tr')), count=document.getElementById('bdCount');
-  function upd(){
-    var v=q.value.trim().toLowerCase(), shown=0;
-    rows.forEach(function(r){
-      var on = !v || r.getAttribute('data-s').indexOf(v)>-1;
-      r.style.display = on?'':'none'; if(on)shown++;
-    });
-    count.textContent='Showing '+shown+' of '+rows.length+' companies';
+  var tb=document.querySelector('#bdt tbody'), rows=[].slice.call(tb.querySelectorAll('tr'));
+  var q=document.getElementById('bdSearch'), count=document.getElementById('bdCount');
+  var sortKey='eng', sortDir=-1; // default: team size desc
+
+  function renumber(){
+    var n=0;
+    rows.forEach(function(r){ if(r.style.display!=='none'){ n++; r.querySelector('.num').textContent=n; } });
   }
-  q.addEventListener('input',upd); upd();
+  function filter(){
+    var v=q.value.trim().toLowerCase(), shown=0;
+    rows.forEach(function(r){ var on=!v||r.getAttribute('data-s').indexOf(v)>-1; r.style.display=on?'':'none'; if(on)shown++; });
+    count.textContent='Showing '+shown+' of '+rows.length+' companies'+(sortKey==='eng'?' · ranked by team size':' · A→Z');
+    renumber();
+  }
+  function sortBy(key){
+    if(sortKey===key){ sortDir=-sortDir; } else { sortKey=key; sortDir = key==='eng' ? -1 : 1; }
+    rows.sort(function(a,b){
+      if(key==='eng'){ return (parseInt(a.dataset.eng)-parseInt(b.dataset.eng))*sortDir; }
+      return a.dataset.name.localeCompare(b.dataset.name)*sortDir;
+    });
+    rows.forEach(function(r){ tb.appendChild(r); });
+    document.querySelectorAll('#bdt th[data-sort] .arw').forEach(function(a){a.textContent='';});
+    var th=document.querySelector('#bdt th[data-sort="'+key+'"] .arw'); if(th) th.textContent = sortDir<0?'▾':'▴';
+    filter();
+  }
+  document.querySelectorAll('#bdt th[data-sort]').forEach(function(th){
+    th.addEventListener('click', function(){ sortBy(th.getAttribute('data-sort')); });
+  });
+  q.addEventListener('input', filter);
+  filter(); // initial (already server-sorted by size desc)
 })();
 </script>

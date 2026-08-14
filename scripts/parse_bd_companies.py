@@ -16,7 +16,10 @@ def flush(cells):
             continue
         m = re.search(r'(https?://[^\[\]\s]+)', web)
         url = m.group(1) if m else ''
-        companies.append({'name': name, 'loc': loc, 'tech': tech, 'url': url, 'eng': eng})
+        # normalise team size to a sortable number (max integer found; e.g. "100+"->100, "15-20"->20)
+        nums = [int(n) for n in re.findall(r'\d+', eng)]
+        engnum = max(nums) if nums else 0
+        companies.append({'name': name, 'loc': loc, 'tech': tech, 'url': url, 'eng': eng, 'engnum': engnum})
 
 for ln in lines:
     st = ln.strip()
@@ -60,4 +63,5 @@ with open(out, 'w', encoding='utf-8') as f:
         f.write('    tech: "%s"\n' % esc(c['tech']))
         f.write('    url: "%s"\n' % esc(c['url']))
         f.write('    eng: "%s"\n' % esc(c['eng']))
+        f.write('    engnum: %d\n' % c['engnum'])
 print('parsed %d companies' % len(uniq))
