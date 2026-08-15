@@ -14,7 +14,7 @@
 
 <div class="teachbox">🎥 <b>Teaching this?</b> Screen-share a template, then rewrite one weak bullet into a strong one live (see the formula below). 📖 <b>Then:</b> <a href="08-interview-prep.html">Interview Prep</a></div>
 
-**Copy-ready companion:** [open the QA Resume / CV master template](templates/qa-resume-cv-template.html). Learners can duplicate it while you teach.
+**Worked example + copy-ready companion:** [open the full Arifuzzaman Antor Senior QA/SDET resume, complete CV timeline and blank master template](templates/qa-resume-cv-template.html). Learners can compare the public-profile facts with the focused application and then duplicate the blank version while you teach.
 
 ## Tutorial plan — teach this without slides
 
