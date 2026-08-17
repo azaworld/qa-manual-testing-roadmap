@@ -1,6 +1,6 @@
 # Auto-updated by .github/workflows/update-tool-versions.yml — do not edit by hand.
 # Latest releases of the tracked open-source AI-QA tools.
-updated: "2026-08-14"
+updated: "2026-08-17"
 tools:
   playwright:
     repo: "microsoft/playwright"
@@ -22,7 +22,7 @@ tools:
     version: "v4.11.0"
   phoenix:
     repo: "Arize-ai/phoenix"
-    version: "arize-phoenix-v20.2.0"
+    version: "arize-phoenix-v20.2.1"
   openai-evals:
     repo: "openai/evals"
-    version: "rolling"
+    version: "v0.1.1"
